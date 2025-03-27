@@ -1,0 +1,70 @@
+digraph "Group Database" {
+	fontsize=16 label="ERD: Database di Setiap Group"
+	lte_data [label="lte_data
+PK: id
+campaign_id
+device_id
+mcc, mnc
+operator
+tracking_area_code
+arfcn
+cell_identity
+frequency_band_indicator
+signal_level
+snr
+rx_lev_min
+status
+created_at" shape=box]
+	gsm_data [label="gsm_data
+PK: id
+campaign_id
+device_id
+mcc, mnc
+operator
+local_area_code
+arfcn
+cell_identity
+rxlev
+rxlev_access_min
+status
+created_at" shape=box]
+	campaign [label="campaign
+PK: id
+user_id
+name
+status
+time_start
+time_stop" shape=box]
+	campaign_devices [label="campaign_devices
+PK: id
+FK: campaign_id, device_id" shape=box]
+	device_group [label="device_group
+PK: id
+group_name
+description
+FK: user_id
+created_at" shape=box]
+	devices [label="devices
+PK: id
+FK: group_id
+serial_number
+ip
+is_connected
+lat
+long
+created_at" shape=box]
+	users [label="users
+PK: id
+email
+username
+name
+password
+role
+created_at" shape=box]
+	campaign -> campaign_devices [label="1:N"]
+	campaign_devices -> devices [label="N:1"]
+	device_group -> devices [label="1:N"]
+	users -> device_group [label="1:N"]
+	campaign -> lte_data [label="1:N"]
+	campaign -> gsm_data [label="1:N"]
+}

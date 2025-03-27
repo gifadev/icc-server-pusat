@@ -1,0 +1,11 @@
+websockets
+psycopg2-binary
+fastapi
+uvicorn[standard]
+python-multipart
+passlib[bcrypt] 
+PyJWT
+requests
+psycopg2
+cryptography
+python-dotenv

@@ -1,0 +1,1097 @@
+Location Manager State:
+  User Info:
+    current users: u[0]
+  Location Settings:
+    Location Setting: true
+    Location Allow/Deny Packages:
+    Throttling Allow Packages:
+      com.sec.android.app.safetyassurance
+      com.google.android.gms
+      com.tmobile.echolocate
+    Throttling Allow Packages by nsflp:
+      com.kt.serviceagent
+      com.sec.location.nsflp2
+      com.android.angryGps
+      com.lguplus.lgugpsnwps
+      com.skt.hps20client
+      com.sec.timezone
+      jp.co.nttdocomo.lcsapp
+    Emergency Bypass Allow Packages:
+      com.sec.android.app.safetyassurance[*]
+      com.sec.imsservice[*]
+      com.google.android.dialer[*]
+      com.google.android.gms[.thunderbird]
+  Location Controller Extra Package: com.google.android.gms.location.history [disabled]
+  Location Providers:
+    passive provider:
+      service: registered
+      listeners:
+        1000/android[SensorNotificationService]/71EE08E1 Request[PASSIVE, minUpdateInterval=+30m0s0ms, minUpdateDistance=100000.0, WorkSource{1000 android}]
+        10246/com.google.android.gms[network_location_provider]/59D7C1C2 Request[PASSIVE, minUpdateInterval=0, hiddenFromAppOps, WorkSource{10246 com.google.android.gms}]
+        1000/android[SLocationService]/34713B41 Request[PASSIVE, minUpdateInterval=0, WorkSource{1000 android}]
+        5023/com.samsung.android.networkdiagnostic/4FDF9C6D {bg} Request[PASSIVE, minUpdateInterval=+5m0s0ms, minUpdateDistance=20.0, WorkSource{5023 com.samsung.android.networkdiagnostic}]
+        10246/com.google.android.gms[fused_location_provider]/2270F308 Request[PASSIVE, minUpdateInterval=0, hiddenFromAppOps, WorkSource{10246 com.google.android.gms}]
+      last location=Location[fused -6.260982,106.960068 hAcc=100.0 et=+10d0h54m58s190ms alt=43.547607421875 vAcc=100.0]
+      enabled=true
+      allowed=true
+      identity=1000/android[LocationService]
+      properties=ProviderProperties[powerUsage=Low, accuracy=Fine]
+    network provider:
+      service: ProviderRequest[@+6h0m0s0ms, LOW_POWER, WorkSource{10236 com.google.android.as}]
+      listeners:
+        1000/android[GnssService]/8588BF14 Request[PASSIVE, minUpdateInterval=0, hiddenFromAppOps, WorkSource{1000 android}]
+        10236/com.google.android.as/E4FAC06A (COARSE) Request[@+6h0m0s0ms LOW_POWER, minUpdateDistance=100000.0, WorkSource{10236 com.google.android.as}]
+      last location=Location[network -6.260887,106.960026 hAcc=699.999 et=+9d14h26m43s928ms]
+      enabled=true
+      allowed=true
+      identity=10246/com.google.android.gms[network_location_provider]
+      extra attribution tags={awareness_provider, activity_recognition_provider, network_location_provider, gnss_location_provider, network_location_calibration, current_semantic_location, fused_location_provider, wearable_flp_shim, geofencer_provider}
+      properties=ProviderProperties[powerUsage=Medium, accuracy=Fine, requires=network, supports=[altitude]]
+      stationary throttled=false (not idle)
+      target service=10246/com.google.android.gms/com.google.android.location.network.NetworkLocationService@2
+      connected=true
+    fused provider:
+      service: ProviderRequest[OFF]
+      last location=Location[fused -6.260982,106.960068 hAcc=100.0 et=+10d0h54m58s190ms alt=43.547607421875 vAcc=100.0]
+      enabled=true
+      allowed=true
+      identity=10246/com.google.android.gms[fused_location_provider]
+      extra attribution tags={awareness_provider, activity_recognition_provider, network_location_provider, gnss_location_provider, network_location_calibration, current_semantic_location, fused_location_provider, wearable_flp_shim, geofencer_provider}
+      properties=ProviderProperties[powerUsage=Low, accuracy=Fine, supports=[bearing,speed,altitude]]
+      stationary throttled=false (not idle)
+      target service=10246/com.google.android.gms/com.google.android.location.fused.FusedLocationService@1
+      connected=true
+    gps provider:
+      service: ProviderRequest[OFF]
+      last location=Location[gps -6.260982,106.960068 hAcc=3.7900925 et=+9d18h57m32s375ms alt=43.547607421875 vAcc=4.355214 vel=0.0 sAcc=0.086023256 {Bundle[{satellites=27, maxCn0=42, meanCn0=31}]}]
+      enabled=true
+      allowed=true
+      identity=1000/android[GnssService]
+      properties=ProviderProperties[powerUsage=High, accuracy=Fine, requires=satellite, supports=[bearing,speed,altitude]]
+      stationary throttled=false (not idle)
+      mStarted=false   (changed +6h5m41s436ms ago)
+      mBatchingEnabled=false
+      mBatchingStarted=false
+      mBatchSize=0
+      mFixInterval=0
+      GNSS_KPI_START
+        KPI logging start time: +24s901ms
+        KPI logging end time: +10d1h3m14s11ms
+        Number of location reports: 504
+        Percentage location failure: 0.0
+        Number of TTFF reports: 58
+        TTFF mean (sec): 2.8727586206896545
+        TTFF standard deviation (sec): 0.9172011457341489
+        Number of position accuracy reports: 504
+        Position accuracy mean (m): 4.677283119587671
+        Position accuracy standard deviation (m): 2.2232680807608696
+        Number of CN0 reports: 598
+        Top 4 Avg CN0 mean (dB-Hz): 39.37127930264808
+        Top 4 Avg CN0 standard deviation (dB-Hz): 2.2027033064989956
+        Total number of sv status messages processed: 30233
+        Total number of L5 sv status messages processed: 0
+        Total number of sv status messages processed, where sv is used in fix: 12022
+        Total number of L5 sv status messages processed, where sv is used in fix: 0
+        Number of L5 CN0 reports: 0
+        Used-in-fix constellation types: GPS GLONASS QZSS BEIDOU GALILEO 
+      GNSS_KPI_END
+      Power Metrics
+        Time on battery (min): 8.85625
+        Amount of time (while on battery) Top 4 Avg CN0 > 20.0 dB-Hz (min): 0.0
+        Amount of time (while on battery) Top 4 Avg CN0 <= 20.0 dB-Hz (min): 0.0
+        Energy consumed while on battery (mAh): 0.0
+      Hardware Version: 7
+      
+      SEC Dump for updateRequirements
+      [
+      [2025-03-10 13:24:50]: restartLocationRequest, 
+      [2025-03-11 14:19:37]: ProviderRequest[@+997ms, HIGH_ACCURACY, WorkSource{10264 com.google.android.apps.maps}] WorkSource{10264 com.google.android.apps.maps}, 
+      [2025-03-11 14:20:03]: ProviderRequest[@+1s0ms, HIGH_ACCURACY, WorkSource{10264 com.google.android.apps.maps}] WorkSource{10264 com.google.android.apps.maps}, 
+      [2025-03-11 14:20:04]: ProviderRequest[OFF] WorkSource{}, 
+      [2025-03-11 14:20:17]: ProviderRequest[@+997ms, HIGH_ACCURACY, WorkSource{10264 com.google.android.apps.maps}] WorkSource{10264 com.google.android.apps.maps}, 
+      [2025-03-11 14:20:26]: ProviderRequest[@+1s0ms, HIGH_ACCURACY, WorkSource{10264 com.google.android.apps.maps}] WorkSource{10264 com.google.android.apps.maps}, 
+      [2025-03-11 14:20:26]: ProviderRequest[@+10m0s0ms, HIGH_ACCURACY, WorkSource{10264 com.google.android.apps.maps}] WorkSource{10264 com.google.android.apps.maps}, 
+      [2025-03-11 14:20:26]: ProviderRequest[OFF] WorkSource{}, 
+      [2025-03-11 14:20:27]: ProviderRequest[@+997ms, HIGH_ACCURACY, WorkSource{10264 com.google.android.apps.maps}] WorkSource{10264 com.google.android.apps.maps}, 
+      [2025-03-11 14:21:20]: ProviderRequest[@+1s0ms, HIGH_ACCURACY, WorkSource{10264 com.google.android.apps.maps}] WorkSource{10264 com.google.android.apps.maps}, 
+      [2025-03-11 14:21:20]: ProviderRequest[@+10m0s0ms, HIGH_ACCURACY, WorkSource{10264 com.google.android.apps.maps}] WorkSource{10264 com.google.android.apps.maps}, 
+      [2025-03-11 14:21:21]: ProviderRequest[OFF] WorkSource{}, 
+      [2025-03-11 14:21:24]: ProviderRequest[@+997ms, HIGH_ACCURACY, WorkSource{10264 com.google.android.apps.maps}] WorkSource{10264 com.google.android.apps.maps}, 
+      [2025-03-11 14:21:54]: ProviderRequest[@+1s0ms, HIGH_ACCURACY, WorkSource{10264 com.google.android.apps.maps}] WorkSource{10264 com.google.android.apps.maps}, 
+      [2025-03-11 14:21:54]: ProviderRequest[@+10m0s0ms, HIGH_ACCURACY, WorkSource{10264 com.google.android.apps.maps}] WorkSource{10264 com.google.android.apps.maps}, 
+      [2025-03-11 14:21:55]: ProviderRequest[OFF] WorkSource{}, 
+      [2025-03-12 06:48:16]: ProviderRequest[@0, HIGH_ACCURACY, WorkSource{10246 com.google.android.gms}] WorkSource{10246 com.google.android.gms}, 
+      [2025-03-12 06:48:26]: ProviderRequest[OFF] WorkSource{}, 
+      [2025-03-12 07:01:05]: ProviderRequest[@0, HIGH_ACCURACY, WorkSource{10246 com.google.android.gms}] WorkSource{10246 com.google.android.gms}, 
+      [2025-03-12 07:01:15]: ProviderRequest[OFF] WorkSource{}, 
+      [2025-03-12 07:58:11]: ProviderRequest[@0, HIGH_ACCURACY, WorkSource{10246 com.google.android.gms}] WorkSource{10246 com.google.android.gms}, 
+      [2025-03-12 07:58:21]: ProviderRequest[OFF] WorkSource{}, 
+      [2025-03-12 09:07:41]: ProviderRequest[@0, HIGH_ACCURACY, WorkSource{10246 com.google.android.gms}] WorkSource{10246 com.google.android.gms}, 
+      [2025-03-12 09:07:51]: ProviderRequest[OFF] WorkSource{}, 
+      [2025-03-12 09:32:37]: ProviderRequest[@0, HIGH_ACCURACY, WorkSource{10246 com.google.android.gms}] WorkSource{10246 com.google.android.gms}, 
+      [2025-03-12 09:32:47]: ProviderRequest[OFF] WorkSource{}, 
+      [2025-03-12 10:59:10]: ProviderRequest[@0, HIGH_ACCURACY, WorkSource{10246 com.google.android.gms}] WorkSource{10246 com.google.android.gms}, 
+      [2025-03-12 10:59:20]: ProviderRequest[OFF] WorkSource{}, 
+      [2025-03-13 06:47:47]: ProviderRequest[@0, HIGH_ACCURACY, WorkSource{10246 com.google.android.gms}] WorkSource{10246 com.google.android.gms}, 
+      [2025-03-13 06:47:57]: ProviderRequest[OFF] WorkSource{}, 
+      [2025-03-13 06:55:13]: ProviderRequest[@0, HIGH_ACCURACY, WorkSource{10246 com.google.android.gms}] WorkSource{10246 com.google.android.gms}, 
+      [2025-03-13 06:55:23]: ProviderRequest[OFF] WorkSource{}, 
+      [2025-03-13 08:26:11]: ProviderRequest[@0, HIGH_ACCURACY, WorkSource{10246 com.google.android.gms}] WorkSource{10246 com.google.android.gms}, 
+      [2025-03-13 08:26:21]: ProviderRequest[OFF] WorkSource{}, 
+      [2025-03-13 08:40:47]: ProviderRequest[@0, HIGH_ACCURACY, WorkSource{10246 com.google.android.gms}] WorkSource{10246 com.google.android.gms}, 
+      [2025-03-13 08:40:57]: ProviderRequest[OFF] WorkSource{}, 
+      [2025-03-13 09:20:04]: ProviderRequest[@0, HIGH_ACCURACY, WorkSource{10246 com.google.android.gms}] WorkSource{10246 com.google.android.gms}, 
+      [2025-03-13 09:20:14]: ProviderRequest[OFF] WorkSource{}, 
+      [2025-03-13 10:45:00]: ProviderRequest[@0, HIGH_ACCURACY, WorkSource{10246 com.google.android.gms}] WorkSource{10246 com.google.android.gms}, 
+      [2025-03-13 10:45:10]: ProviderRequest[OFF] WorkSource{}, 
+      [2025-03-14 06:29:19]: ProviderRequest[@0, HIGH_ACCURACY, WorkSource{10246 com.google.android.gms}] WorkSource{10246 com.google.android.gms}, 
+      [2025-03-14 06:29:29]: ProviderRequest[OFF] WorkSource{}, 
+      [2025-03-14 07:18:18]: ProviderRequest[@0, HIGH_ACCURACY, WorkSource{10246 com.google.android.gms}] WorkSource{10246 com.google.android.gms}, 
+      [2025-03-14 07:18:28]: ProviderRequest[OFF] WorkSource{}, 
+      [2025-03-14 08:09:02]: ProviderRequest[@0, HIGH_ACCURACY, WorkSource{10246 com.google.android.gms}] WorkSource{10246 com.google.android.gms}, 
+      [2025-03-14 08:09:12]: ProviderRequest[OFF] WorkSource{}, 
+      [2025-03-14 08:49:18]: ProviderRequest[@0, HIGH_ACCURACY, WorkSource{10246 com.google.android.gms}] WorkSource{10246 com.google.android.gms}, 
+      [2025-03-14 08:49:28]: ProviderRequest[OFF] WorkSource{}, 
+      [2025-03-14 09:45:17]: ProviderRequest[@0, HIGH_ACCURACY, WorkSource{10246 com.google.android.gms}] WorkSource{10246 com.google.android.gms}, 
+      [2025-03-14 09:45:27]: ProviderRequest[OFF] WorkSource{}, 
+      [2025-03-14 10:52:26]: ProviderRequest[@0, HIGH_ACCURACY, WorkSource{10246 com.google.android.gms}] WorkSource{10246 com.google.android.gms}, 
+      [2025-03-14 10:52:36]: ProviderRequest[OFF] WorkSource{}, 
+      [2025-03-15 06:44:52]: ProviderRequest[@0, HIGH_ACCURACY, WorkSource{10246 com.google.android.gms}] WorkSource{10246 com.google.android.gms}, 
+      [2025-03-15 06:45:02]: ProviderRequest[OFF] WorkSource{}, 
+      [2025-03-15 07:23:38]: ProviderRequest[@0, HIGH_ACCURACY, WorkSource{10246 com.google.android.gms}] WorkSource{10246 com.google.android.gms}, 
+      [2025-03-15 07:23:48]: ProviderRequest[OFF] WorkSource{}, 
+      [2025-03-15 08:14:06]: ProviderRequest[@0, HIGH_ACCURACY, WorkSource{10246 com.google.android.gms}] WorkSource{10246 com.google.android.gms}, 
+      [2025-03-15 08:14:16]: ProviderRequest[OFF] WorkSource{}, 
+      [2025-03-15 08:33:08]: ProviderRequest[@0, HIGH_ACCURACY, WorkSource{10246 com.google.android.gms}] WorkSource{10246 com.google.android.gms}, 
+      [2025-03-15 08:33:18]: ProviderRequest[OFF] WorkSource{}, 
+      [2025-03-15 09:42:59]: ProviderRequest[@0, HIGH_ACCURACY, WorkSource{10246 com.google.android.gms}] WorkSource{10246 com.google.android.gms}, 
+      [2025-03-15 09:43:09]: ProviderRequest[OFF] WorkSource{}, 
+      [2025-03-15 10:41:55]: ProviderRequest[@0, HIGH_ACCURACY, WorkSource{10246 com.google.android.gms}] WorkSource{10246 com.google.android.gms}, 
+      [2025-03-15 10:42:05]: ProviderRequest[OFF] WorkSource{}, 
+      [2025-03-16 06:29:40]: ProviderRequest[@0, HIGH_ACCURACY, WorkSource{10246 com.google.android.gms}] WorkSource{10246 com.google.android.gms}, 
+      [2025-03-16 06:29:50]: ProviderRequest[OFF] WorkSource{}, 
+      [2025-03-16 06:51:05]: ProviderRequest[@0, HIGH_ACCURACY, WorkSource{10246 com.google.android.gms}] WorkSource{10246 com.google.android.gms}, 
+      [2025-03-16 06:51:15]: ProviderRequest[OFF] WorkSource{}, 
+      [2025-03-16 08:21:48]: ProviderRequest[@0, HIGH_ACCURACY, WorkSource{10246 com.google.android.gms}] WorkSource{10246 com.google.android.gms}, 
+      [2025-03-16 08:21:58]: ProviderRequest[OFF] WorkSource{}, 
+      [2025-03-16 08:44:34]: ProviderRequest[@0, HIGH_ACCURACY, WorkSource{10246 com.google.android.gms}] WorkSource{10246 com.google.android.gms}, 
+      [2025-03-16 08:44:44]: ProviderRequest[OFF] WorkSource{}, 
+      [2025-03-16 09:23:50]: ProviderRequest[@0, HIGH_ACCURACY, WorkSource{10246 com.google.android.gms}] WorkSource{10246 com.google.android.gms}, 
+      [2025-03-16 09:24:00]: ProviderRequest[OFF] WorkSource{}, 
+      [2025-03-16 10:17:27]: ProviderRequest[@0, HIGH_ACCURACY, WorkSource{10246 com.google.android.gms}] WorkSource{10246 com.google.android.gms}, 
+      [2025-03-16 10:17:37]: ProviderRequest[OFF] WorkSource{}, 
+      [2025-03-17 06:35:59]: ProviderRequest[@0, HIGH_ACCURACY, WorkSource{10246 com.google.android.gms}] WorkSource{10246 com.google.android.gms}, 
+      [2025-03-17 06:36:09]: ProviderRequest[OFF] WorkSource{}, 
+      [2025-03-17 07:28:12]: ProviderRequest[@0, HIGH_ACCURACY, WorkSource{10246 com.google.android.gms}] WorkSource{10246 com.google.android.gms}, 
+      [2025-03-17 07:28:22]: ProviderRequest[OFF] WorkSource{}, 
+      [2025-03-17 08:19:40]: ProviderRequest[@0, HIGH_ACCURACY, WorkSource{10246 com.google.android.gms}] WorkSource{10246 com.google.android.gms}, 
+      [2025-03-17 08:19:50]: ProviderRequest[OFF] WorkSource{}, 
+      [2025-03-17 08:41:58]: ProviderRequest[@0, HIGH_ACCURACY, WorkSource{10246 com.google.android.gms}] WorkSource{10246 com.google.android.gms}, 
+      [2025-03-17 08:42:08]: ProviderRequest[OFF] WorkSource{}, 
+      [2025-03-17 08:54:21]: ProviderRequest[@0, HIGH_ACCURACY, WorkSource{10246 com.google.android.gms}] WorkSource{10246 com.google.android.gms}, 
+      [2025-03-17 08:54:31]: ProviderRequest[OFF] WorkSource{}, 
+      [2025-03-17 09:14:02]: ProviderRequest[@0, HIGH_ACCURACY, WorkSource{10246 com.google.android.gms}] WorkSource{10246 com.google.android.gms}, 
+      [2025-03-17 09:14:12]: ProviderRequest[OFF] WorkSource{}, 
+      [2025-03-17 09:19:33]: ProviderRequest[@0, HIGH_ACCURACY, WorkSource{10246 com.google.android.gms}] WorkSource{10246 com.google.android.gms}, 
+      [2025-03-17 09:19:43]: ProviderRequest[OFF] WorkSource{}, 
+      [2025-03-17 09:19:48]: ProviderRequest[@0, HIGH_ACCURACY, WorkSource{10246 com.google.android.gms}] WorkSource{10246 com.google.android.gms}, 
+      [2025-03-17 09:19:58]: ProviderRequest[OFF] WorkSource{}, 
+      [2025-03-17 09:48:44]: ProviderRequest[@0, HIGH_ACCURACY, WorkSource{10246 com.google.android.gms}] WorkSource{10246 com.google.android.gms}, 
+      [2025-03-17 09:48:54]: ProviderRequest[OFF] WorkSource{}, 
+      [2025-03-17 10:44:35]: ProviderRequest[@0, HIGH_ACCURACY, WorkSource{10246 com.google.android.gms}] WorkSource{10246 com.google.android.gms}, 
+      [2025-03-17 10:44:45]: ProviderRequest[OFF] WorkSource{}, 
+      [2025-03-17 11:07:38]: ProviderRequest[@+1s0ms, HIGH_ACCURACY, WorkSource{1000 android}] WorkSource{1000 android}, 
+      [2025-03-17 11:07:38]: ProviderRequest[@0, HIGH_ACCURACY, WorkSource{1000 android}] WorkSource{1000 android}, 
+      [2025-03-17 11:07:41]: ProviderRequest[OFF] WorkSource{}, 
+      [2025-03-17 17:13:42]: ProviderRequest[@+1s0ms, HIGH_ACCURACY, WorkSource{1000 android}] WorkSource{1000 android}, 
+      [2025-03-17 17:13:42]: ProviderRequest[@0, HIGH_ACCURACY, WorkSource{1000 android}] WorkSource{1000 android}, 
+      [2025-03-17 17:13:42]: ProviderRequest[@+1s0ms, HIGH_ACCURACY, WorkSource{1000 android}] WorkSource{1000 android}, 
+      [2025-03-17 17:13:44]: ProviderRequest[OFF] WorkSource{}, 
+      [2025-03-18 12:35:34]: ProviderRequest[@+1s0ms, HIGH_ACCURACY, WorkSource{1000 android}] WorkSource{1000 android}, 
+      [2025-03-18 12:35:34]: ProviderRequest[@0, HIGH_ACCURACY, WorkSource{1000 android}] WorkSource{1000 android}, 
+      [2025-03-18 12:35:37]: ProviderRequest[OFF] WorkSource{}, 
+      [2025-03-19 06:08:26]: ProviderRequest[@0, HIGH_ACCURACY, WorkSource{10246 com.google.android.gms}] WorkSource{10246 com.google.android.gms}, 
+      [2025-03-19 06:08:36]: ProviderRequest[OFF] WorkSource{}, 
+      [2025-03-19 07:28:57]: ProviderRequest[@0, HIGH_ACCURACY, WorkSource{10246 com.google.android.gms}] WorkSource{10246 com.google.android.gms}, 
+      [2025-03-19 07:29:07]: ProviderRequest[OFF] WorkSource{}, 
+      [2025-03-19 07:47:14]: ProviderRequest[@0, HIGH_ACCURACY, WorkSource{10246 com.google.android.gms}] WorkSource{10246 com.google.android.gms}, 
+      [2025-03-19 07:47:24]: ProviderRequest[OFF] WorkSource{}, 
+      [2025-03-19 08:53:11]: ProviderRequest[@0, HIGH_ACCURACY, WorkSource{10246 com.google.android.gms}] WorkSource{10246 com.google.android.gms}, 
+      [2025-03-19 08:53:21]: ProviderRequest[OFF] WorkSource{}, 
+      [2025-03-19 09:34:36]: ProviderRequest[@0, HIGH_ACCURACY, WorkSource{10246 com.google.android.gms}] WorkSource{10246 com.google.android.gms}, 
+      [2025-03-19 09:34:46]: ProviderRequest[OFF] WorkSource{}, 
+      [2025-03-19 10:39:47]: ProviderRequest[@0, HIGH_ACCURACY, WorkSource{10246 com.google.android.gms}] WorkSource{10246 com.google.android.gms}, 
+      [2025-03-19 10:39:57]: ProviderRequest[OFF] WorkSource{}, 
+      [2025-03-20 06:33:44]: ProviderRequest[@0, HIGH_ACCURACY, WorkSource{10246 com.google.android.gms}] WorkSource{10246 com.google.android.gms}, 
+      [2025-03-20 06:33:54]: ProviderRequest[OFF] WorkSource{}, 
+      [2025-03-20 07:19:13]: ProviderRequest[@0, HIGH_ACCURACY, WorkSource{10246 com.google.android.gms}] WorkSource{10246 com.google.android.gms}, 
+      [2025-03-20 07:19:23]: ProviderRequest[OFF] WorkSource{}, 
+      [2025-03-20 08:20:20]: ProviderRequest[@0, HIGH_ACCURACY, WorkSource{10246 com.google.android.gms}] WorkSource{10246 com.google.android.gms}, 
+      [2025-03-20 08:20:30]: ProviderRequest[OFF] WorkSource{}, 
+      [2025-03-20 09:00:57]: ProviderRequest[@0, HIGH_ACCURACY, WorkSource{10246 com.google.android.gms}] WorkSource{10246 com.google.android.gms}, 
+      [2025-03-20 09:01:07]: ProviderRequest[OFF] WorkSource{}, 
+      [2025-03-20 09:43:02]: ProviderRequest[@0, HIGH_ACCURACY, WorkSource{10246 com.google.android.gms}] WorkSource{10246 com.google.android.gms}, 
+      [2025-03-20 09:43:12]: ProviderRequest[OFF] WorkSource{}, 
+      [2025-03-20 10:21:45]: ProviderRequest[@0, HIGH_ACCURACY, WorkSource{10246 com.google.android.gms}] WorkSource{10246 com.google.android.gms}, 
+      [2025-03-20 10:21:55]: ProviderRequest[OFF] WorkSource{}]
+      
+      SEC Dump for Deleting aiding data
+      None
+      
+      SEC Dump for sim state history
+      []
+      
+      ============ GPS Carrier Feature State ============
+      [
+       Sim slot ID  :  0
+       AGPS Setting  :  
+       SUPL Address  :  
+       SUPL version  :  -1
+       AGPS Mode  :  -1
+       AGNSS Protocol  :  -1
+       LPPeCP  :  -1
+       LPPeUP  :  -1
+       ES Extension Sec  :  -1
+       Exception mask for Agnss  :  -1
+      , 
+       Sim slot ID  :  1
+       AGPS Setting  :  
+       SUPL Address  :  
+       SUPL version  :  -1
+       AGPS Mode  :  -1
+       AGNSS Protocol  :  -1
+       LPPeCP  :  -1
+       LPPeUP  :  -1
+       ES Extension Sec  :  -1
+       Exception mask for Agnss  :  -1
+      ]
+      
+      ============ GPS SECGPS CONFIGURATION State ============
+       There is no secgps.conf file !!!!!
+      
+      
+  Historical Aggregate Location Provider Data:
+    passive:
+      10246/com.google.android.gms[fused_location_provider]: min/max interval = passive/passive, total/active/foreground duration = +9d1h19m43s495ms/+9d0h8m10s500ms/+9d1h19m43s470ms, locations = 2801
+      1000/android[SensorNotificationService]: min/max interval = passive/passive, total/active/foreground duration = +10d1h2m43s152ms/+9d0h8m29s105ms/+10d1h2m43s152ms, locations = 1
+      10246/com.google.android.gms[network_location_provider]: min/max interval = passive/passive, total/active/foreground duration = +8d15h8m47s489ms/+8d15h8m47s462ms/+8d15h8m47s479ms, locations = 2331
+      1000/android[SLocationService]: min/max interval = passive/passive, total/active/foreground duration = +10d1h2m48s636ms/+9d0h8m29s64ms/+10d1h2m48s635ms, locations = 2580
+      1000/android[CountryDetector]: min/max interval = passive/passive, total/active/foreground duration = +10ms/+9ms/+9ms, locations = 1
+      5023/com.samsung.android.networkdiagnostic: min/max interval = passive/passive, total/active/foreground duration = +9d0h8m27s7ms/+9d0h8m27s4ms/0, locations = 24
+    gps:
+      10246/com.google.android.gms[fused_location_provider]: min/max interval = 0s/1s, total/active/foreground duration = +2m5s470ms/+2m5s450ms/+2m5s460ms, locations = 90
+      10246/com.google.android.gms[location_accuracy]: min/max interval = 0s/0s, total/active/foreground duration = +9m39s925ms/+9m39s669ms/+9m39s859ms, locations = 466
+      1000/android[DeviceIdleController]: min/max interval = 1s/1s, total/active/foreground duration = +8s655ms/+8s624ms/+8s652ms, locations = 2
+      10264/com.google.android.apps.maps: min/max interval = 0s/0s, total/active/foreground duration = +2m0s414ms/+2m0s401ms/+1m59s579ms, locations = 90
+    fused:
+      1000/android[DeviceIdleController]: min/max interval = 0s/0s, total/active/foreground duration = +6s341ms/+6s296ms/+6s333ms, locations = 2
+    network:
+      10236/com.google.android.as: min/max interval = 21600s/21600s, total/active/foreground duration = +10d1h2m34s811ms/+9d0h7m53s701ms/+10d1h2m34s685ms, locations = 2
+      1000/android[GnssService]: min/max interval = 1s/passive, total/active/foreground duration = +10d1h2m48s970ms/+9d0h7m58s330ms/+10d1h2m48s966ms, locations = 183
+  GNSS Manager:
+    Capabilities: [SCHEDULING MSB MSA GEOFENCING LOW_POWER_MODE SATELLITE_BLOCKLIST ACCUMULATED_DELTA_RANGE(unknown)]
+    GNSS Hardware Model Name: qcom,SM_RENNELL_AB,MPSS.AT.4.4-00388-RENNELL_GEN_PACK-2.47872.2.59912.9,
+    Status Provider:
+      service: registered
+      listeners:
+        10246/com.google.android.gms[network_location_provider]/3A8F8836
+    Measurements Provider:
+      service: unregistered
+    Antenna Info Provider:
+      Antenna Infos: null
+      service: unregistered
+  Geofence Manager:
+    service: unregistered
+  Event Log:
+    03-10 15:24:47.965: network provider +registration 1000/android[GnssService]/8588BF14 -> Request[PASSIVE, minUpdateInterval=0, hiddenFromAppOps, WorkSource{1000 android}]
+    03-10 15:24:47.986: network provider client 1000/android[GnssService]/8588BF14 -> foreground
+    03-10 15:24:48.316: passive provider +registration 1000/android[SLocationService]/34713B41 -> Request[PASSIVE, minUpdateInterval=0, WorkSource{1000 android}]
+    03-10 15:24:48.317: passive provider client 1000/android[SLocationService]/34713B41 -> foreground
+    03-10 15:24:49.047: [u0] visible
+    03-10 15:24:53.800: passive provider +registration 1000/android[SensorNotificationService]/71EE08E1 -> Request[PASSIVE, minUpdateInterval=+30m0s0ms, minUpdateDistance=100000.0, WorkSource{1000 android}]
+    03-10 15:24:53.800: passive provider client 1000/android[SensorNotificationService]/71EE08E1 -> foreground
+    03-10 15:24:57.537: network provider +registration 10236/com.google.android.as/8A4230EB -> Request[@+6h0m0s0ms BALANCED, minUpdateDistance=100000.0, WorkSource{10236 com.google.android.as}]
+    03-10 15:24:57.538: network provider client 10236/com.google.android.as/8A4230EB -> foreground
+    03-10 18:17:15.911: fused provider +registration 1000/android[DeviceIdleController]/321A6ACE -> Request[@0 HIGH_ACCURACY, maxUpdates=1, WorkSource{1000 android}]
+    03-10 18:17:15.918: fused provider client 1000/android[DeviceIdleController]/321A6ACE -> foreground
+    03-10 18:17:15.925: gps provider +registration 1000/android[DeviceIdleController]/8418A9A8 -> Request[@+1s0ms HIGH_ACCURACY, minUpdateDistance=5.0, WorkSource{1000 android}]
+    03-10 18:17:15.926: gps provider client 1000/android[DeviceIdleController]/8418A9A8 -> foreground
+    03-10 18:17:15.948: fused provider -registration 1000/android[DeviceIdleController]/321A6ACE
+    03-10 18:17:15.949: gps provider -registration 1000/android[DeviceIdleController]/8418A9A8
+    03-11 15:07:34.901: location [u0] enabled
+    03-11 15:07:34.903: passive provider [u0] enabled
+    03-11 15:07:34.927: passive provider request = ProviderRequest[@0]
+    03-11 15:07:34.927: fused provider [u0] enabled
+    03-11 15:07:34.932: gps provider [u0] enabled
+    03-11 15:07:35.012: passive provider +registration 10246/com.google.android.gms[fused_location_provider]/37F63EAA -> Request[PASSIVE, minUpdateInterval=0, hiddenFromAppOps, WorkSource{10246 com.google.android.gms}]
+    03-11 15:07:35.013: passive provider client 10246/com.google.android.gms[fused_location_provider]/37F63EAA -> foreground
+    03-11 15:07:35.042: network provider client 10236/com.google.android.as/8A4230EB -> permitted
+    03-11 15:07:35.836: location [u0] disabled
+    03-11 15:07:35.838: passive provider [u0] disabled
+    03-11 15:07:35.839: passive provider request = ProviderRequest[OFF]
+    03-11 15:07:35.839: fused provider [u0] disabled
+    03-11 15:07:35.840: gps provider [u0] disabled
+    03-11 15:07:35.856: network provider client 10236/com.google.android.as/8A4230EB -> unpermitted
+    03-11 16:19:08.781: location [u0] enabled
+    03-11 16:19:08.783: passive provider [u0] enabled
+    03-11 16:19:08.800: passive provider request = ProviderRequest[@0]
+    03-11 16:19:08.801: fused provider [u0] enabled
+    03-11 16:19:08.806: gps provider [u0] enabled
+    03-11 16:19:08.820: network provider client 10236/com.google.android.as/8A4230EB -> permitted
+    03-11 16:19:08.833: passive provider -registration 10246/com.google.android.gms[fused_location_provider]/37F63EAA
+    03-11 16:19:08.910: passive provider +registration 10246/com.google.android.gms[fused_location_provider]/37F63EAA -> Request[PASSIVE, minUpdateInterval=0, hiddenFromAppOps, WorkSource{10246 com.google.android.gms}]
+    03-11 16:19:08.913: passive provider client 10246/com.google.android.gms[fused_location_provider]/37F63EAA -> foreground
+    03-11 16:19:09.945: passive provider +registration 5023/com.samsung.android.networkdiagnostic/4FDF9C6D -> Request[PASSIVE, minUpdateInterval=+5m0s0ms, minUpdateDistance=20.0, WorkSource{5023 com.samsung.android.networkdiagnostic}]
+    03-11 16:19:34.696: gps provider +registration 10264/com.google.android.apps.maps/8BC41EED -> Request[@+997ms HIGH_ACCURACY, WorkSource{10264 com.google.android.apps.maps}]
+    03-11 16:19:34.698: gps provider client 10264/com.google.android.apps.maps/8BC41EED -> foreground
+    03-11 16:19:34.700: gps provider request = ProviderRequest[@+997ms, HIGH_ACCURACY, WorkSource{10264 com.google.android.apps.maps}]
+    03-11 16:19:34.750: network provider +registration 1000/android[GnssService]/D6BAB855 -> Request[@+1s0ms LOW_POWER, duration=+10s0ms, maxUpdates=1, WorkSource{1000 android}]
+    03-11 16:19:34.751: network provider client 1000/android[GnssService]/D6BAB855 -> foreground
+    03-11 16:19:34.767: gps provider +registration 10246/com.google.android.gms[fused_location_provider]/4DA80412 -> Request[@+1s0ms HIGH_ACCURACY, hiddenFromAppOps, WorkSource{10264 com.google.android.apps.maps}]
+    03-11 16:19:34.768: gps provider client 10246/com.google.android.gms[fused_location_provider]/4DA80412 -> foreground
+    03-11 16:19:36.387: network provider [u0] enabled
+    03-11 16:19:36.390: network provider request = ProviderRequest[@+1s0ms, LOW_POWER, WorkSource{1000 android}]
+    03-11 16:19:36.413: location [u0] enabled
+    03-11 16:19:36.667: passive provider +registration 10246/com.google.android.gms[fused_location_provider]/B17BFB2D -> Request[PASSIVE, minUpdateInterval=0, hiddenFromAppOps, WorkSource{10246 com.google.android.gms}]
+    03-11 16:19:36.667: passive provider client 10246/com.google.android.gms[fused_location_provider]/B17BFB2D -> foreground
+    03-11 16:19:37.542: passive provider -registration 5023/com.samsung.android.networkdiagnostic/4FDF9C6D
+    03-11 16:19:37.542: passive provider +registration 5023/com.samsung.android.networkdiagnostic/4FDF9C6D -> Request[PASSIVE, minUpdateInterval=+5m0s0ms, minUpdateDistance=20.0, WorkSource{5023 com.samsung.android.networkdiagnostic}]
+    03-11 16:19:44.738: network provider +registration 1000/android[GnssService]/6B7AFC5D -> Request[@+1s0ms LOW_POWER, duration=+10s0ms, maxUpdates=1, WorkSource{1000 android}]
+    03-11 16:19:44.738: network provider client 1000/android[GnssService]/6B7AFC5D -> foreground
+    03-11 16:19:44.753: network provider -registration 1000/android[GnssService]/D6BAB855
+    03-11 16:19:54.742: network provider -registration 1000/android[GnssService]/6B7AFC5D
+    03-11 16:19:54.742: network provider request = ProviderRequest[@+6h0m0s0ms, LOW_POWER, WorkSource{10236 com.google.android.as}]
+    03-11 16:19:54.754: network provider +registration 1000/android[GnssService]/2D12DDD4 -> Request[@+1s0ms LOW_POWER, duration=+10s0ms, maxUpdates=1, WorkSource{1000 android}]
+    03-11 16:19:54.756: network provider client 1000/android[GnssService]/2D12DDD4 -> foreground
+    03-11 16:19:54.759: network provider request = ProviderRequest[@+1s0ms, LOW_POWER, WorkSource{1000 android}]
+    03-11 16:20:01.184: gps provider -registration 10264/com.google.android.apps.maps/8BC41EED
+    03-11 16:20:01.184: gps provider request = ProviderRequest[@+1s0ms, HIGH_ACCURACY, WorkSource{10264 com.google.android.apps.maps}]
+    03-11 16:20:01.242: gps provider -registration 10246/com.google.android.gms[fused_location_provider]/4DA80412
+    03-11 16:20:01.242: gps provider request = ProviderRequest[OFF]
+    03-11 16:20:01.255: passive provider -registration 10246/com.google.android.gms[fused_location_provider]/B17BFB2D
+    03-11 16:20:04.762: network provider -registration 1000/android[GnssService]/2D12DDD4
+    03-11 16:20:04.762: network provider request = ProviderRequest[@+6h0m0s0ms, LOW_POWER, WorkSource{10236 com.google.android.as}]
+    03-11 16:20:17.844: gps provider +registration 10264/com.google.android.apps.maps/32BAB791 -> Request[@+997ms HIGH_ACCURACY, WorkSource{10264 com.google.android.apps.maps}]
+    03-11 16:20:17.845: gps provider client 10264/com.google.android.apps.maps/32BAB791 -> foreground
+    03-11 16:20:17.848: gps provider request = ProviderRequest[@+997ms, HIGH_ACCURACY, WorkSource{10264 com.google.android.apps.maps}]
+    03-11 16:20:17.877: network provider +registration 1000/android[GnssService]/009DEDE5 -> Request[@+1s0ms LOW_POWER, duration=+10s0ms, maxUpdates=1, WorkSource{1000 android}]
+    03-11 16:20:17.882: network provider client 1000/android[GnssService]/009DEDE5 -> foreground
+    03-11 16:20:17.911: gps provider +registration 10246/com.google.android.gms[fused_location_provider]/4DA80412 -> Request[@+1s0ms HIGH_ACCURACY, hiddenFromAppOps, WorkSource{10264 com.google.android.apps.maps}]
+    03-11 16:20:17.912: gps provider client 10246/com.google.android.gms[fused_location_provider]/4DA80412 -> foreground
+    03-11 16:20:17.916: network provider request = ProviderRequest[@+1s0ms, LOW_POWER, WorkSource{1000 android}]
+    03-11 16:20:17.917: passive provider +registration 10246/com.google.android.gms[fused_location_provider]/B17BFB2D -> Request[PASSIVE, minUpdateInterval=0, hiddenFromAppOps, WorkSource{10246 com.google.android.gms}]
+    03-11 16:20:17.918: passive provider client 10246/com.google.android.gms[fused_location_provider]/B17BFB2D -> foreground
+    03-11 16:20:23.132: network provider -registration 1000/android[GnssService]/009DEDE5
+    03-11 16:20:23.133: network provider request = ProviderRequest[@+6h0m0s0ms, LOW_POWER, WorkSource{10236 com.google.android.as}]
+    03-11 16:20:26.596: gps provider client 10264/com.google.android.apps.maps/32BAB791 -> background
+    03-11 16:20:26.597: gps provider request = ProviderRequest[@+1s0ms, HIGH_ACCURACY, WorkSource{10264 com.google.android.apps.maps}]
+    03-11 16:20:26.642: gps provider -registration 10246/com.google.android.gms[fused_location_provider]/4DA80412
+    03-11 16:20:26.642: gps provider request = ProviderRequest[@+10m0s0ms, HIGH_ACCURACY, WorkSource{10264 com.google.android.apps.maps}]
+    03-11 16:20:26.650: passive provider -registration 10246/com.google.android.gms[fused_location_provider]/B17BFB2D
+    03-11 16:20:26.927: gps provider -registration 10264/com.google.android.apps.maps/32BAB791
+    03-11 16:20:26.928: gps provider request = ProviderRequest[OFF]
+    03-11 16:20:27.084: gps provider +registration 10264/com.google.android.apps.maps/CA44DA4A -> Request[@+997ms HIGH_ACCURACY, WorkSource{10264 com.google.android.apps.maps}]
+    03-11 16:20:27.086: gps provider client 10264/com.google.android.apps.maps/CA44DA4A -> foreground
+    03-11 16:20:27.090: gps provider request = ProviderRequest[@+997ms, HIGH_ACCURACY, WorkSource{10264 com.google.android.apps.maps}]
+    03-11 16:20:27.151: gps provider +registration 10246/com.google.android.gms[fused_location_provider]/4DA80412 -> Request[@+1s0ms HIGH_ACCURACY, hiddenFromAppOps, WorkSource{10264 com.google.android.apps.maps}]
+    03-11 16:20:27.151: gps provider client 10246/com.google.android.gms[fused_location_provider]/4DA80412 -> foreground
+    03-11 16:20:27.158: passive provider +registration 10246/com.google.android.gms[fused_location_provider]/B17BFB2D -> Request[PASSIVE, minUpdateInterval=0, hiddenFromAppOps, WorkSource{10246 com.google.android.gms}]
+    03-11 16:20:27.159: passive provider client 10246/com.google.android.gms[fused_location_provider]/B17BFB2D -> foreground
+    03-11 16:21:20.907: gps provider client 10264/com.google.android.apps.maps/CA44DA4A -> background
+    03-11 16:21:20.908: gps provider request = ProviderRequest[@+1s0ms, HIGH_ACCURACY, WorkSource{10264 com.google.android.apps.maps}]
+    03-11 16:21:20.916: gps provider -registration 10246/com.google.android.gms[fused_location_provider]/4DA80412
+    03-11 16:21:20.916: gps provider request = ProviderRequest[@+10m0s0ms, HIGH_ACCURACY, WorkSource{10264 com.google.android.apps.maps}]
+    03-11 16:21:20.926: passive provider -registration 10246/com.google.android.gms[fused_location_provider]/B17BFB2D
+    03-11 16:21:21.205: gps provider -registration 10264/com.google.android.apps.maps/CA44DA4A
+    03-11 16:21:21.206: gps provider request = ProviderRequest[OFF]
+    03-11 16:21:24.352: gps provider +registration 10264/com.google.android.apps.maps/F23A6C54 -> Request[@+997ms HIGH_ACCURACY, WorkSource{10264 com.google.android.apps.maps}]
+    03-11 16:21:24.353: gps provider client 10264/com.google.android.apps.maps/F23A6C54 -> foreground
+    03-11 16:21:24.354: gps provider request = ProviderRequest[@+997ms, HIGH_ACCURACY, WorkSource{10264 com.google.android.apps.maps}]
+    03-11 16:21:24.653: gps provider +registration 10246/com.google.android.gms[fused_location_provider]/4DA80412 -> Request[@+1s0ms HIGH_ACCURACY, hiddenFromAppOps, WorkSource{10264 com.google.android.apps.maps}]
+    03-11 16:21:24.659: gps provider client 10246/com.google.android.gms[fused_location_provider]/4DA80412 -> foreground
+    03-11 16:21:24.668: passive provider +registration 10246/com.google.android.gms[fused_location_provider]/B17BFB2D -> Request[PASSIVE, minUpdateInterval=0, hiddenFromAppOps, WorkSource{10246 com.google.android.gms}]
+    03-11 16:21:24.675: passive provider client 10246/com.google.android.gms[fused_location_provider]/B17BFB2D -> foreground
+    03-11 16:21:54.873: gps provider client 10264/com.google.android.apps.maps/F23A6C54 -> background
+    03-11 16:21:54.874: gps provider request = ProviderRequest[@+1s0ms, HIGH_ACCURACY, WorkSource{10264 com.google.android.apps.maps}]
+    03-11 16:21:54.876: gps provider -registration 10246/com.google.android.gms[fused_location_provider]/4DA80412
+    03-11 16:21:54.876: gps provider request = ProviderRequest[@+10m0s0ms, HIGH_ACCURACY, WorkSource{10264 com.google.android.apps.maps}]
+    03-11 16:21:54.898: passive provider -registration 10246/com.google.android.gms[fused_location_provider]/B17BFB2D
+    03-11 16:21:55.073: gps provider -registration 10264/com.google.android.apps.maps/F23A6C54
+    03-11 16:21:55.073: gps provider request = ProviderRequest[OFF]
+    03-11 16:23:05.283: network provider client 10236/com.google.android.as/8A4230EB -> background
+    03-11 16:23:05.406: network provider -registration 10236/com.google.android.as/8A4230EB
+    03-11 16:23:05.406: network provider request = ProviderRequest[OFF]
+    03-11 16:23:10.011: network provider +registration 10236/com.google.android.as/E4FAC06A -> Request[@+6h0m0s0ms BALANCED, minUpdateDistance=100000.0, WorkSource{10236 com.google.android.as}]
+    03-11 16:23:10.013: network provider client 10236/com.google.android.as/E4FAC06A -> foreground
+    03-11 22:20:18.152: network provider request = ProviderRequest[@+6h0m0s0ms, LOW_POWER, WorkSource{10236 com.google.android.as}]
+    03-12 01:18:33.516: passive provider -registration 10246/com.google.android.gms[fused_location_provider]/37F63EAA
+    03-12 01:18:34.514: network provider [u0] disabled
+    03-12 01:18:34.517: network provider request = ProviderRequest[OFF]
+    03-12 01:18:34.520: fused provider [u0] disabled
+    03-12 01:18:35.278: network provider [u0] enabled
+    03-12 01:18:35.288: network provider request = ProviderRequest[@+6h0m0s0ms, LOW_POWER, WorkSource{10236 com.google.android.as}]
+    03-12 01:18:35.613: fused provider [u0] enabled
+    03-12 01:18:36.227: passive provider +registration 10246/com.google.android.gms[network_location_provider]/A4709571 -> Request[PASSIVE, minUpdateInterval=0, hiddenFromAppOps, WorkSource{10246 com.google.android.gms}]
+    03-12 01:18:36.230: passive provider client 10246/com.google.android.gms[network_location_provider]/A4709571 -> foreground
+    03-12 01:18:36.554: passive provider +registration 10246/com.google.android.gms[fused_location_provider]/55D4B620 -> Request[PASSIVE, minUpdateInterval=0, hiddenFromAppOps, WorkSource{10246 com.google.android.gms}]
+    03-12 01:18:36.555: passive provider client 10246/com.google.android.gms[fused_location_provider]/55D4B620 -> foreground
+    03-12 08:48:16.642: gps provider +registration 10246/com.google.android.gms[location_accuracy]/2171A83B -> Request[@0 HIGH_ACCURACY, WorkSource{10246 com.google.android.gms}]
+    03-12 08:48:16.643: gps provider client 10246/com.google.android.gms[location_accuracy]/2171A83B -> foreground
+    03-12 08:48:16.647: gps provider request = ProviderRequest[@0, HIGH_ACCURACY, WorkSource{10246 com.google.android.gms}]
+    03-12 08:48:16.687: network provider +registration 1000/android[GnssService]/F9803C80 -> Request[@+1s0ms LOW_POWER, duration=+10s0ms, maxUpdates=1, WorkSource{1000 android}]
+    03-12 08:48:16.687: network provider client 1000/android[GnssService]/F9803C80 -> foreground
+    03-12 08:48:16.696: network provider request = ProviderRequest[@+1s0ms, LOW_POWER, WorkSource{1000 android}]
+    03-12 08:48:18.425: network provider -registration 1000/android[GnssService]/F9803C80
+    03-12 08:48:18.425: network provider request = ProviderRequest[@+6h0m0s0ms, LOW_POWER, WorkSource{10236 com.google.android.as}]
+    03-12 08:48:26.643: gps provider -registration 10246/com.google.android.gms[location_accuracy]/2171A83B
+    03-12 08:48:26.644: gps provider request = ProviderRequest[OFF]
+    03-12 09:01:05.164: gps provider +registration 10246/com.google.android.gms[location_accuracy]/4A88B95C -> Request[@0 HIGH_ACCURACY, WorkSource{10246 com.google.android.gms}]
+    03-12 09:01:05.166: gps provider client 10246/com.google.android.gms[location_accuracy]/4A88B95C -> foreground
+    03-12 09:01:05.170: gps provider request = ProviderRequest[@0, HIGH_ACCURACY, WorkSource{10246 com.google.android.gms}]
+    03-12 09:01:15.165: gps provider -registration 10246/com.google.android.gms[location_accuracy]/4A88B95C
+    03-12 09:01:15.166: gps provider request = ProviderRequest[OFF]
+    03-12 09:58:11.538: gps provider +registration 10246/com.google.android.gms[location_accuracy]/81CFE4CB -> Request[@0 HIGH_ACCURACY, WorkSource{10246 com.google.android.gms}]
+    03-12 09:58:11.539: gps provider client 10246/com.google.android.gms[location_accuracy]/81CFE4CB -> foreground
+    03-12 09:58:11.543: gps provider request = ProviderRequest[@0, HIGH_ACCURACY, WorkSource{10246 com.google.android.gms}]
+    03-12 09:58:21.534: gps provider -registration 10246/com.google.android.gms[location_accuracy]/81CFE4CB
+    03-12 09:58:21.535: gps provider request = ProviderRequest[OFF]
+    03-12 11:07:41.784: gps provider +registration 10246/com.google.android.gms[location_accuracy]/58069D6C -> Request[@0 HIGH_ACCURACY, WorkSource{10246 com.google.android.gms}]
+    03-12 11:07:41.785: gps provider client 10246/com.google.android.gms[location_accuracy]/58069D6C -> foreground
+    03-12 11:07:41.789: gps provider request = ProviderRequest[@0, HIGH_ACCURACY, WorkSource{10246 com.google.android.gms}]
+    03-12 11:07:41.843: network provider +registration 1000/android[GnssService]/55115DC9 -> Request[@+1s0ms LOW_POWER, duration=+10s0ms, maxUpdates=1, WorkSource{1000 android}]
+    03-12 11:07:41.844: network provider client 1000/android[GnssService]/55115DC9 -> foreground
+    03-12 11:07:41.851: network provider request = ProviderRequest[@+1s0ms, LOW_POWER, WorkSource{1000 android}]
+    03-12 11:07:43.540: network provider -registration 1000/android[GnssService]/55115DC9
+    03-12 11:07:43.540: network provider request = ProviderRequest[@+6h0m0s0ms, LOW_POWER, WorkSource{10236 com.google.android.as}]
+    03-12 11:07:51.784: gps provider -registration 10246/com.google.android.gms[location_accuracy]/58069D6C
+    03-12 11:07:51.784: gps provider request = ProviderRequest[OFF]
+    03-12 11:32:37.820: gps provider +registration 10246/com.google.android.gms[location_accuracy]/57ACEDF6 -> Request[@0 HIGH_ACCURACY, WorkSource{10246 com.google.android.gms}]
+    03-12 11:32:37.822: gps provider client 10246/com.google.android.gms[location_accuracy]/57ACEDF6 -> foreground
+    03-12 11:32:37.826: gps provider request = ProviderRequest[@0, HIGH_ACCURACY, WorkSource{10246 com.google.android.gms}]
+    03-12 11:32:47.822: gps provider -registration 10246/com.google.android.gms[location_accuracy]/57ACEDF6
+    03-12 11:32:47.822: gps provider request = ProviderRequest[OFF]
+    03-12 12:59:10.311: gps provider +registration 10246/com.google.android.gms[location_accuracy]/24296B28 -> Request[@0 HIGH_ACCURACY, WorkSource{10246 com.google.android.gms}]
+    03-12 12:59:10.312: gps provider client 10246/com.google.android.gms[location_accuracy]/24296B28 -> foreground
+    03-12 12:59:10.317: gps provider request = ProviderRequest[@0, HIGH_ACCURACY, WorkSource{10246 com.google.android.gms}]
+    03-12 12:59:20.309: gps provider -registration 10246/com.google.android.gms[location_accuracy]/24296B28
+    03-12 12:59:20.310: gps provider request = ProviderRequest[OFF]
+    03-12 14:00:28.457: passive provider -registration 10246/com.google.android.gms[network_location_provider]/A4709571
+    03-12 14:00:28.459: passive provider -registration 10246/com.google.android.gms[fused_location_provider]/55D4B620
+    03-12 14:00:29.458: fused provider [u0] disabled
+    03-12 14:00:29.529: fused provider [u0] enabled
+    03-12 14:00:30.293: passive provider +registration 10246/com.google.android.gms[network_location_provider]/8BA15D65 -> Request[PASSIVE, minUpdateInterval=0, hiddenFromAppOps, WorkSource{10246 com.google.android.gms}]
+    03-12 14:00:30.294: passive provider client 10246/com.google.android.gms[network_location_provider]/8BA15D65 -> foreground
+    03-12 14:00:30.460: passive provider +registration 10246/com.google.android.gms[fused_location_provider]/38644B92 -> Request[PASSIVE, minUpdateInterval=0, hiddenFromAppOps, WorkSource{10246 com.google.android.gms}]
+    03-12 14:00:30.464: passive provider client 10246/com.google.android.gms[fused_location_provider]/38644B92 -> foreground
+    03-13 08:47:47.468: gps provider +registration 10246/com.google.android.gms[location_accuracy]/F66DBEF6 -> Request[@0 HIGH_ACCURACY, WorkSource{10246 com.google.android.gms}]
+    03-13 08:47:47.470: gps provider client 10246/com.google.android.gms[location_accuracy]/F66DBEF6 -> foreground
+    03-13 08:47:47.472: gps provider request = ProviderRequest[@0, HIGH_ACCURACY, WorkSource{10246 com.google.android.gms}]
+    03-13 08:47:57.471: gps provider -registration 10246/com.google.android.gms[location_accuracy]/F66DBEF6
+    03-13 08:47:57.471: gps provider request = ProviderRequest[OFF]
+    03-13 08:55:13.517: gps provider +registration 10246/com.google.android.gms[location_accuracy]/8F8A1BC5 -> Request[@0 HIGH_ACCURACY, WorkSource{10246 com.google.android.gms}]
+    03-13 08:55:13.518: gps provider client 10246/com.google.android.gms[location_accuracy]/8F8A1BC5 -> foreground
+    03-13 08:55:13.522: gps provider request = ProviderRequest[@0, HIGH_ACCURACY, WorkSource{10246 com.google.android.gms}]
+    03-13 08:55:23.516: gps provider -registration 10246/com.google.android.gms[location_accuracy]/8F8A1BC5
+    03-13 08:55:23.516: gps provider request = ProviderRequest[OFF]
+    03-13 10:26:11.550: gps provider +registration 10246/com.google.android.gms[location_accuracy]/C990457F -> Request[@0 HIGH_ACCURACY, WorkSource{10246 com.google.android.gms}]
+    03-13 10:26:11.551: gps provider client 10246/com.google.android.gms[location_accuracy]/C990457F -> foreground
+    03-13 10:26:11.556: gps provider request = ProviderRequest[@0, HIGH_ACCURACY, WorkSource{10246 com.google.android.gms}]
+    03-13 10:26:21.548: gps provider -registration 10246/com.google.android.gms[location_accuracy]/C990457F
+    03-13 10:26:21.549: gps provider request = ProviderRequest[OFF]
+    03-13 10:40:47.482: gps provider +registration 10246/com.google.android.gms[location_accuracy]/52CD2E84 -> Request[@0 HIGH_ACCURACY, WorkSource{10246 com.google.android.gms}]
+    03-13 10:40:47.483: gps provider client 10246/com.google.android.gms[location_accuracy]/52CD2E84 -> foreground
+    03-13 10:40:47.486: gps provider request = ProviderRequest[@0, HIGH_ACCURACY, WorkSource{10246 com.google.android.gms}]
+    03-13 10:40:57.481: gps provider -registration 10246/com.google.android.gms[location_accuracy]/52CD2E84
+    03-13 10:40:57.482: gps provider request = ProviderRequest[OFF]
+    03-13 11:20:04.440: gps provider +registration 10246/com.google.android.gms[location_accuracy]/E776969C -> Request[@0 HIGH_ACCURACY, WorkSource{10246 com.google.android.gms}]
+    03-13 11:20:04.441: gps provider client 10246/com.google.android.gms[location_accuracy]/E776969C -> foreground
+    03-13 11:20:04.445: gps provider request = ProviderRequest[@0, HIGH_ACCURACY, WorkSource{10246 com.google.android.gms}]
+    03-13 11:20:14.434: gps provider -registration 10246/com.google.android.gms[location_accuracy]/E776969C
+    03-13 11:20:14.435: gps provider request = ProviderRequest[OFF]
+    03-13 12:45:00.832: gps provider +registration 10246/com.google.android.gms[location_accuracy]/CF7D51D2 -> Request[@0 HIGH_ACCURACY, WorkSource{10246 com.google.android.gms}]
+    03-13 12:45:00.834: gps provider client 10246/com.google.android.gms[location_accuracy]/CF7D51D2 -> foreground
+    03-13 12:45:00.838: gps provider request = ProviderRequest[@0, HIGH_ACCURACY, WorkSource{10246 com.google.android.gms}]
+    03-13 12:45:00.865: network provider +registration 1000/android[GnssService]/EC23D7CD -> Request[@+1s0ms LOW_POWER, duration=+10s0ms, maxUpdates=1, WorkSource{1000 android}]
+    03-13 12:45:00.865: network provider client 1000/android[GnssService]/EC23D7CD -> foreground
+    03-13 12:45:00.875: network provider request = ProviderRequest[@+1s0ms, LOW_POWER, WorkSource{1000 android}]
+    03-13 12:45:03.782: network provider -registration 1000/android[GnssService]/EC23D7CD
+    03-13 12:45:03.782: network provider request = ProviderRequest[@+6h0m0s0ms, LOW_POWER, WorkSource{10236 com.google.android.as}]
+    03-13 12:45:10.830: gps provider -registration 10246/com.google.android.gms[location_accuracy]/CF7D51D2
+    03-13 12:45:10.831: gps provider request = ProviderRequest[OFF]
+    03-14 08:29:19.567: gps provider +registration 10246/com.google.android.gms[location_accuracy]/170D8911 -> Request[@0 HIGH_ACCURACY, WorkSource{10246 com.google.android.gms}]
+    03-14 08:29:19.568: gps provider client 10246/com.google.android.gms[location_accuracy]/170D8911 -> foreground
+    03-14 08:29:19.573: gps provider request = ProviderRequest[@0, HIGH_ACCURACY, WorkSource{10246 com.google.android.gms}]
+    03-14 08:29:29.563: gps provider -registration 10246/com.google.android.gms[location_accuracy]/170D8911
+    03-14 08:29:29.564: gps provider request = ProviderRequest[OFF]
+    03-14 09:18:18.162: gps provider +registration 10246/com.google.android.gms[location_accuracy]/70EFC3E8 -> Request[@0 HIGH_ACCURACY, WorkSource{10246 com.google.android.gms}]
+    03-14 09:18:18.163: gps provider client 10246/com.google.android.gms[location_accuracy]/70EFC3E8 -> foreground
+    03-14 09:18:18.167: gps provider request = ProviderRequest[@0, HIGH_ACCURACY, WorkSource{10246 com.google.android.gms}]
+    03-14 09:18:28.159: gps provider -registration 10246/com.google.android.gms[location_accuracy]/70EFC3E8
+    03-14 09:18:28.160: gps provider request = ProviderRequest[OFF]
+    03-14 10:09:02.245: gps provider +registration 10246/com.google.android.gms[location_accuracy]/44A29DEE -> Request[@0 HIGH_ACCURACY, WorkSource{10246 com.google.android.gms}]
+    03-14 10:09:02.246: gps provider client 10246/com.google.android.gms[location_accuracy]/44A29DEE -> foreground
+    03-14 10:09:02.249: gps provider request = ProviderRequest[@0, HIGH_ACCURACY, WorkSource{10246 com.google.android.gms}]
+    03-14 10:09:12.242: gps provider -registration 10246/com.google.android.gms[location_accuracy]/44A29DEE
+    03-14 10:09:12.242: gps provider request = ProviderRequest[OFF]
+    03-14 10:49:18.742: gps provider +registration 10246/com.google.android.gms[location_accuracy]/350F5CB3 -> Request[@0 HIGH_ACCURACY, WorkSource{10246 com.google.android.gms}]
+    03-14 10:49:18.743: gps provider client 10246/com.google.android.gms[location_accuracy]/350F5CB3 -> foreground
+    03-14 10:49:18.747: gps provider request = ProviderRequest[@0, HIGH_ACCURACY, WorkSource{10246 com.google.android.gms}]
+    03-14 10:49:28.735: gps provider -registration 10246/com.google.android.gms[location_accuracy]/350F5CB3
+    03-14 10:49:28.735: gps provider request = ProviderRequest[OFF]
+    03-14 11:45:17.822: gps provider +registration 10246/com.google.android.gms[location_accuracy]/EDD0E3C5 -> Request[@0 HIGH_ACCURACY, WorkSource{10246 com.google.android.gms}]
+    03-14 11:45:17.824: gps provider client 10246/com.google.android.gms[location_accuracy]/EDD0E3C5 -> foreground
+    03-14 11:45:17.828: gps provider request = ProviderRequest[@0, HIGH_ACCURACY, WorkSource{10246 com.google.android.gms}]
+    03-14 11:45:27.815: gps provider -registration 10246/com.google.android.gms[location_accuracy]/EDD0E3C5
+    03-14 11:45:27.816: gps provider request = ProviderRequest[OFF]
+    03-14 12:12:46.944: passive provider +registration 1000/android[CountryDetector]/ACFEF4CA -> Request[PASSIVE, minUpdateInterval=0, WorkSource{1000 android}]
+    03-14 12:12:46.945: passive provider client 1000/android[CountryDetector]/ACFEF4CA -> foreground
+    03-14 12:12:46.954: passive provider -registration 1000/android[CountryDetector]/ACFEF4CA
+    03-14 12:52:26.968: gps provider +registration 10246/com.google.android.gms[location_accuracy]/321AEFE8 -> Request[@0 HIGH_ACCURACY, WorkSource{10246 com.google.android.gms}]
+    03-14 12:52:26.970: gps provider client 10246/com.google.android.gms[location_accuracy]/321AEFE8 -> foreground
+    03-14 12:52:26.973: gps provider request = ProviderRequest[@0, HIGH_ACCURACY, WorkSource{10246 com.google.android.gms}]
+    03-14 12:52:36.966: gps provider -registration 10246/com.google.android.gms[location_accuracy]/321AEFE8
+    03-14 12:52:36.967: gps provider request = ProviderRequest[OFF]
+    03-14 14:04:28.512: passive provider -registration 10246/com.google.android.gms[network_location_provider]/8BA15D65
+    03-14 14:04:28.515: passive provider -registration 10246/com.google.android.gms[fused_location_provider]/38644B92
+    03-14 14:04:29.518: network provider [u0] disabled
+    03-14 14:04:29.522: network provider request = ProviderRequest[OFF]
+    03-14 14:04:29.523: fused provider [u0] disabled
+    03-14 14:04:30.598: network provider [u0] enabled
+    03-14 14:04:30.607: network provider request = ProviderRequest[@+6h0m0s0ms, LOW_POWER, WorkSource{10236 com.google.android.as}]
+    03-14 14:04:30.770: fused provider [u0] enabled
+    03-14 14:04:31.008: passive provider +registration 10246/com.google.android.gms[network_location_provider]/51A8F7C7 -> Request[PASSIVE, minUpdateInterval=0, hiddenFromAppOps, WorkSource{10246 com.google.android.gms}]
+    03-14 14:04:31.008: passive provider client 10246/com.google.android.gms[network_location_provider]/51A8F7C7 -> foreground
+    03-14 14:04:31.509: passive provider +registration 10246/com.google.android.gms[fused_location_provider]/78A05987 -> Request[PASSIVE, minUpdateInterval=0, hiddenFromAppOps, WorkSource{10246 com.google.android.gms}]
+    03-14 14:04:31.514: passive provider client 10246/com.google.android.gms[fused_location_provider]/78A05987 -> foreground
+    03-15 08:44:52.006: gps provider +registration 10246/com.google.android.gms[location_accuracy]/1D185AAB -> Request[@0 HIGH_ACCURACY, WorkSource{10246 com.google.android.gms}]
+    03-15 08:44:52.006: gps provider client 10246/com.google.android.gms[location_accuracy]/1D185AAB -> foreground
+    03-15 08:44:52.009: gps provider request = ProviderRequest[@0, HIGH_ACCURACY, WorkSource{10246 com.google.android.gms}]
+    03-15 08:45:02.007: gps provider -registration 10246/com.google.android.gms[location_accuracy]/1D185AAB
+    03-15 08:45:02.007: gps provider request = ProviderRequest[OFF]
+    03-15 09:23:38.952: gps provider +registration 10246/com.google.android.gms[location_accuracy]/4969B78C -> Request[@0 HIGH_ACCURACY, WorkSource{10246 com.google.android.gms}]
+    03-15 09:23:38.953: gps provider client 10246/com.google.android.gms[location_accuracy]/4969B78C -> foreground
+    03-15 09:23:38.957: gps provider request = ProviderRequest[@0, HIGH_ACCURACY, WorkSource{10246 com.google.android.gms}]
+    03-15 09:23:48.950: gps provider -registration 10246/com.google.android.gms[location_accuracy]/4969B78C
+    03-15 09:23:48.950: gps provider request = ProviderRequest[OFF]
+    03-15 10:14:06.839: gps provider +registration 10246/com.google.android.gms[location_accuracy]/EA74E12D -> Request[@0 HIGH_ACCURACY, WorkSource{10246 com.google.android.gms}]
+    03-15 10:14:06.841: gps provider client 10246/com.google.android.gms[location_accuracy]/EA74E12D -> foreground
+    03-15 10:14:06.845: gps provider request = ProviderRequest[@0, HIGH_ACCURACY, WorkSource{10246 com.google.android.gms}]
+    03-15 10:14:16.834: gps provider -registration 10246/com.google.android.gms[location_accuracy]/EA74E12D
+    03-15 10:14:16.835: gps provider request = ProviderRequest[OFF]
+    03-15 10:33:08.348: gps provider +registration 10246/com.google.android.gms[location_accuracy]/DEC97888 -> Request[@0 HIGH_ACCURACY, WorkSource{10246 com.google.android.gms}]
+    03-15 10:33:08.350: gps provider client 10246/com.google.android.gms[location_accuracy]/DEC97888 -> foreground
+    03-15 10:33:08.353: gps provider request = ProviderRequest[@0, HIGH_ACCURACY, WorkSource{10246 com.google.android.gms}]
+    03-15 10:33:18.346: gps provider -registration 10246/com.google.android.gms[location_accuracy]/DEC97888
+    03-15 10:33:18.346: gps provider request = ProviderRequest[OFF]
+    03-15 11:42:59.012: gps provider +registration 10246/com.google.android.gms[location_accuracy]/10369245 -> Request[@0 HIGH_ACCURACY, WorkSource{10246 com.google.android.gms}]
+    03-15 11:42:59.013: gps provider client 10246/com.google.android.gms[location_accuracy]/10369245 -> foreground
+    03-15 11:42:59.017: gps provider request = ProviderRequest[@0, HIGH_ACCURACY, WorkSource{10246 com.google.android.gms}]
+    03-15 11:43:09.006: gps provider -registration 10246/com.google.android.gms[location_accuracy]/10369245
+    03-15 11:43:09.007: gps provider request = ProviderRequest[OFF]
+    03-15 12:41:55.104: gps provider +registration 10246/com.google.android.gms[location_accuracy]/2EBD9C6A -> Request[@0 HIGH_ACCURACY, WorkSource{10246 com.google.android.gms}]
+    03-15 12:41:55.105: gps provider client 10246/com.google.android.gms[location_accuracy]/2EBD9C6A -> foreground
+    03-15 12:41:55.109: gps provider request = ProviderRequest[@0, HIGH_ACCURACY, WorkSource{10246 com.google.android.gms}]
+    03-15 12:42:05.101: gps provider -registration 10246/com.google.android.gms[location_accuracy]/2EBD9C6A
+    03-15 12:42:05.102: gps provider request = ProviderRequest[OFF]
+    03-15 14:30:00.181: passive provider -registration 10246/com.google.android.gms[network_location_provider]/51A8F7C7
+    03-15 14:30:00.187: passive provider -registration 10246/com.google.android.gms[fused_location_provider]/78A05987
+    03-15 14:30:01.188: fused provider [u0] disabled
+    03-15 14:30:01.236: fused provider [u0] enabled
+    03-15 14:30:01.513: passive provider +registration 10246/com.google.android.gms[network_location_provider]/6E23E60C -> Request[PASSIVE, minUpdateInterval=0, hiddenFromAppOps, WorkSource{10246 com.google.android.gms}]
+    03-15 14:30:01.515: passive provider client 10246/com.google.android.gms[network_location_provider]/6E23E60C -> foreground
+    03-15 14:30:01.919: passive provider +registration 10246/com.google.android.gms[fused_location_provider]/38644B92 -> Request[PASSIVE, minUpdateInterval=0, hiddenFromAppOps, WorkSource{10246 com.google.android.gms}]
+    03-15 14:30:01.920: passive provider client 10246/com.google.android.gms[fused_location_provider]/38644B92 -> foreground
+    03-16 08:29:40.831: gps provider +registration 10246/com.google.android.gms[location_accuracy]/84ECD7E5 -> Request[@0 HIGH_ACCURACY, WorkSource{10246 com.google.android.gms}]
+    03-16 08:29:40.832: gps provider client 10246/com.google.android.gms[location_accuracy]/84ECD7E5 -> foreground
+    03-16 08:29:40.836: gps provider request = ProviderRequest[@0, HIGH_ACCURACY, WorkSource{10246 com.google.android.gms}]
+    03-16 08:29:50.829: gps provider -registration 10246/com.google.android.gms[location_accuracy]/84ECD7E5
+    03-16 08:29:50.829: gps provider request = ProviderRequest[OFF]
+    03-16 08:51:05.264: gps provider +registration 10246/com.google.android.gms[location_accuracy]/1B729531 -> Request[@0 HIGH_ACCURACY, WorkSource{10246 com.google.android.gms}]
+    03-16 08:51:05.266: gps provider client 10246/com.google.android.gms[location_accuracy]/1B729531 -> foreground
+    03-16 08:51:05.268: gps provider request = ProviderRequest[@0, HIGH_ACCURACY, WorkSource{10246 com.google.android.gms}]
+    03-16 08:51:15.263: gps provider -registration 10246/com.google.android.gms[location_accuracy]/1B729531
+    03-16 08:51:15.266: gps provider request = ProviderRequest[OFF]
+    03-16 10:21:48.140: gps provider +registration 10246/com.google.android.gms[location_accuracy]/22AB7CC9 -> Request[@0 HIGH_ACCURACY, WorkSource{10246 com.google.android.gms}]
+    03-16 10:21:48.141: gps provider client 10246/com.google.android.gms[location_accuracy]/22AB7CC9 -> foreground
+    03-16 10:21:48.145: gps provider request = ProviderRequest[@0, HIGH_ACCURACY, WorkSource{10246 com.google.android.gms}]
+    03-16 10:21:58.143: gps provider -registration 10246/com.google.android.gms[location_accuracy]/22AB7CC9
+    03-16 10:21:58.144: gps provider request = ProviderRequest[OFF]
+    03-16 10:44:34.604: gps provider +registration 10246/com.google.android.gms[location_accuracy]/FDA4FEB6 -> Request[@0 HIGH_ACCURACY, WorkSource{10246 com.google.android.gms}]
+    03-16 10:44:34.605: gps provider client 10246/com.google.android.gms[location_accuracy]/FDA4FEB6 -> foreground
+    03-16 10:44:34.608: gps provider request = ProviderRequest[@0, HIGH_ACCURACY, WorkSource{10246 com.google.android.gms}]
+    03-16 10:44:44.602: gps provider -registration 10246/com.google.android.gms[location_accuracy]/FDA4FEB6
+    03-16 10:44:44.603: gps provider request = ProviderRequest[OFF]
+    03-16 11:23:50.337: gps provider +registration 10246/com.google.android.gms[location_accuracy]/71F5E06D -> Request[@0 HIGH_ACCURACY, WorkSource{10246 com.google.android.gms}]
+    03-16 11:23:50.338: gps provider client 10246/com.google.android.gms[location_accuracy]/71F5E06D -> foreground
+    03-16 11:23:50.343: gps provider request = ProviderRequest[@0, HIGH_ACCURACY, WorkSource{10246 com.google.android.gms}]
+    03-16 11:24:00.332: gps provider -registration 10246/com.google.android.gms[location_accuracy]/71F5E06D
+    03-16 11:24:00.333: gps provider request = ProviderRequest[OFF]
+    03-16 12:17:27.971: gps provider +registration 10246/com.google.android.gms[location_accuracy]/28F74C3C -> Request[@0 HIGH_ACCURACY, WorkSource{10246 com.google.android.gms}]
+    03-16 12:17:27.972: gps provider client 10246/com.google.android.gms[location_accuracy]/28F74C3C -> foreground
+    03-16 12:17:27.977: gps provider request = ProviderRequest[@0, HIGH_ACCURACY, WorkSource{10246 com.google.android.gms}]
+    03-16 12:17:37.968: gps provider -registration 10246/com.google.android.gms[location_accuracy]/28F74C3C
+    03-16 12:17:37.969: gps provider request = ProviderRequest[OFF]
+    03-17 08:35:59.406: gps provider +registration 10246/com.google.android.gms[location_accuracy]/8C0C4EB1 -> Request[@0 HIGH_ACCURACY, WorkSource{10246 com.google.android.gms}]
+    03-17 08:35:59.407: gps provider client 10246/com.google.android.gms[location_accuracy]/8C0C4EB1 -> foreground
+    03-17 08:35:59.410: gps provider request = ProviderRequest[@0, HIGH_ACCURACY, WorkSource{10246 com.google.android.gms}]
+    03-17 08:36:09.406: gps provider -registration 10246/com.google.android.gms[location_accuracy]/8C0C4EB1
+    03-17 08:36:09.407: gps provider request = ProviderRequest[OFF]
+    03-17 09:28:12.219: gps provider +registration 10246/com.google.android.gms[location_accuracy]/11B8DF08 -> Request[@0 HIGH_ACCURACY, WorkSource{10246 com.google.android.gms}]
+    03-17 09:28:12.221: gps provider client 10246/com.google.android.gms[location_accuracy]/11B8DF08 -> foreground
+    03-17 09:28:12.224: gps provider request = ProviderRequest[@0, HIGH_ACCURACY, WorkSource{10246 com.google.android.gms}]
+    03-17 09:28:22.209: gps provider -registration 10246/com.google.android.gms[location_accuracy]/11B8DF08
+    03-17 09:28:22.210: gps provider request = ProviderRequest[OFF]
+    03-17 10:19:40.069: gps provider +registration 10246/com.google.android.gms[location_accuracy]/5A324F6A -> Request[@0 HIGH_ACCURACY, WorkSource{10246 com.google.android.gms}]
+    03-17 10:19:40.070: gps provider client 10246/com.google.android.gms[location_accuracy]/5A324F6A -> foreground
+    03-17 10:19:40.073: gps provider request = ProviderRequest[@0, HIGH_ACCURACY, WorkSource{10246 com.google.android.gms}]
+    03-17 10:19:50.066: gps provider -registration 10246/com.google.android.gms[location_accuracy]/5A324F6A
+    03-17 10:19:50.066: gps provider request = ProviderRequest[OFF]
+    03-17 10:41:58.975: gps provider +registration 10246/com.google.android.gms[location_accuracy]/06A29042 -> Request[@0 HIGH_ACCURACY, WorkSource{10246 com.google.android.gms}]
+    03-17 10:41:58.976: gps provider client 10246/com.google.android.gms[location_accuracy]/06A29042 -> foreground
+    03-17 10:41:58.980: gps provider request = ProviderRequest[@0, HIGH_ACCURACY, WorkSource{10246 com.google.android.gms}]
+    03-17 10:42:08.974: gps provider -registration 10246/com.google.android.gms[location_accuracy]/06A29042
+    03-17 10:42:08.974: gps provider request = ProviderRequest[OFF]
+    03-17 10:53:14.312: passive provider -registration 10246/com.google.android.gms[network_location_provider]/6E23E60C
+    03-17 10:53:14.323: passive provider -registration 10246/com.google.android.gms[fused_location_provider]/38644B92
+    03-17 10:53:15.557: passive provider +registration 10246/com.google.android.gms[network_location_provider]/AD2EE099 -> Request[PASSIVE, minUpdateInterval=0, hiddenFromAppOps, WorkSource{10246 com.google.android.gms}]
+    03-17 10:53:15.559: passive provider client 10246/com.google.android.gms[network_location_provider]/AD2EE099 -> foreground
+    03-17 10:53:16.094: passive provider +registration 10246/com.google.android.gms[fused_location_provider]/731C71BF -> Request[PASSIVE, minUpdateInterval=0, hiddenFromAppOps, WorkSource{10246 com.google.android.gms}]
+    03-17 10:53:16.095: passive provider client 10246/com.google.android.gms[fused_location_provider]/731C71BF -> foreground
+    03-17 10:54:21.364: gps provider +registration 10246/com.google.android.gms[location_accuracy]/AF121309 -> Request[@0 HIGH_ACCURACY, WorkSource{10246 com.google.android.gms}]
+    03-17 10:54:21.364: gps provider client 10246/com.google.android.gms[location_accuracy]/AF121309 -> foreground
+    03-17 10:54:21.367: gps provider request = ProviderRequest[@0, HIGH_ACCURACY, WorkSource{10246 com.google.android.gms}]
+    03-17 10:54:31.363: gps provider -registration 10246/com.google.android.gms[location_accuracy]/AF121309
+    03-17 10:54:31.364: gps provider request = ProviderRequest[OFF]
+    03-17 11:14:02.859: gps provider +registration 10246/com.google.android.gms[location_accuracy]/D04B472F -> Request[@0 HIGH_ACCURACY, WorkSource{10246 com.google.android.gms}]
+    03-17 11:14:02.860: gps provider client 10246/com.google.android.gms[location_accuracy]/D04B472F -> foreground
+    03-17 11:14:02.869: gps provider request = ProviderRequest[@0, HIGH_ACCURACY, WorkSource{10246 com.google.android.gms}]
+    03-17 11:14:12.852: gps provider -registration 10246/com.google.android.gms[location_accuracy]/D04B472F
+    03-17 11:14:12.852: gps provider request = ProviderRequest[OFF]
+    03-17 11:19:33.191: gps provider +registration 10246/com.google.android.gms[location_accuracy]/65721B6B -> Request[@0 HIGH_ACCURACY, WorkSource{10246 com.google.android.gms}]
+    03-17 11:19:33.192: gps provider client 10246/com.google.android.gms[location_accuracy]/65721B6B -> foreground
+    03-17 11:19:33.196: gps provider request = ProviderRequest[@0, HIGH_ACCURACY, WorkSource{10246 com.google.android.gms}]
+    03-17 11:19:43.189: gps provider -registration 10246/com.google.android.gms[location_accuracy]/65721B6B
+    03-17 11:19:43.189: gps provider request = ProviderRequest[OFF]
+    03-17 11:19:48.821: gps provider +registration 10246/com.google.android.gms[location_accuracy]/4BB7DA63 -> Request[@0 HIGH_ACCURACY, WorkSource{10246 com.google.android.gms}]
+    03-17 11:19:48.822: gps provider client 10246/com.google.android.gms[location_accuracy]/4BB7DA63 -> foreground
+    03-17 11:19:48.825: gps provider request = ProviderRequest[@0, HIGH_ACCURACY, WorkSource{10246 com.google.android.gms}]
+    03-17 11:19:58.820: gps provider -registration 10246/com.google.android.gms[location_accuracy]/4BB7DA63
+    03-17 11:19:58.821: gps provider request = ProviderRequest[OFF]
+    03-17 11:48:44.595: gps provider +registration 10246/com.google.android.gms[location_accuracy]/EFC8063C -> Request[@0 HIGH_ACCURACY, WorkSource{10246 com.google.android.gms}]
+    03-17 11:48:44.596: gps provider client 10246/com.google.android.gms[location_accuracy]/EFC8063C -> foreground
+    03-17 11:48:44.601: gps provider request = ProviderRequest[@0, HIGH_ACCURACY, WorkSource{10246 com.google.android.gms}]
+    03-17 11:48:54.588: gps provider -registration 10246/com.google.android.gms[location_accuracy]/EFC8063C
+    03-17 11:48:54.589: gps provider request = ProviderRequest[OFF]
+    03-17 12:44:35.572: gps provider +registration 10246/com.google.android.gms[location_accuracy]/87317C4D -> Request[@0 HIGH_ACCURACY, WorkSource{10246 com.google.android.gms}]
+    03-17 12:44:35.573: gps provider client 10246/com.google.android.gms[location_accuracy]/87317C4D -> foreground
+    03-17 12:44:35.577: gps provider request = ProviderRequest[@0, HIGH_ACCURACY, WorkSource{10246 com.google.android.gms}]
+    03-17 12:44:45.569: gps provider -registration 10246/com.google.android.gms[location_accuracy]/87317C4D
+    03-17 12:44:45.571: gps provider request = ProviderRequest[OFF]
+    03-17 13:07:38.859: fused provider +registration 1000/android[DeviceIdleController]/321A6ACE -> Request[@0 HIGH_ACCURACY, maxUpdates=1, WorkSource{1000 android}]
+    03-17 13:07:38.860: fused provider client 1000/android[DeviceIdleController]/321A6ACE -> foreground
+    03-17 13:07:38.880: fused provider request = ProviderRequest[@0, HIGH_ACCURACY, WorkSource{1000 android}]
+    03-17 13:07:38.882: gps provider +registration 1000/android[DeviceIdleController]/8418A9A8 -> Request[@+1s0ms HIGH_ACCURACY, minUpdateDistance=5.0, WorkSource{1000 android}]
+    03-17 13:07:38.883: gps provider client 1000/android[DeviceIdleController]/8418A9A8 -> foreground
+    03-17 13:07:38.896: gps provider request = ProviderRequest[@+1s0ms, HIGH_ACCURACY, WorkSource{1000 android}]
+    03-17 13:07:38.910: gps provider +registration 10246/com.google.android.gms[fused_location_provider]/F3D1B130 -> Request[@0 HIGH_ACCURACY, hiddenFromAppOps, WorkSource{1000 android}]
+    03-17 13:07:38.911: gps provider client 10246/com.google.android.gms[fused_location_provider]/F3D1B130 -> foreground
+    03-17 13:07:38.912: gps provider request = ProviderRequest[@0, HIGH_ACCURACY, WorkSource{1000 android}]
+    03-17 13:07:38.916: passive provider +registration 10246/com.google.android.gms[fused_location_provider]/2AEF4C68 -> Request[PASSIVE, minUpdateInterval=0, hiddenFromAppOps, WorkSource{10246 com.google.android.gms}]
+    03-17 13:07:38.916: passive provider client 10246/com.google.android.gms[fused_location_provider]/2AEF4C68 -> foreground
+    03-17 13:07:41.184: fused provider -registration 1000/android[DeviceIdleController]/321A6ACE
+    03-17 13:07:41.184: fused provider request = ProviderRequest[OFF]
+    03-17 13:07:41.194: gps provider -registration 1000/android[DeviceIdleController]/8418A9A8
+    03-17 13:07:41.215: gps provider -registration 10246/com.google.android.gms[fused_location_provider]/F3D1B130
+    03-17 13:07:41.215: gps provider request = ProviderRequest[OFF]
+    03-17 13:07:41.217: network provider stationary/idle throttled, request = ProviderRequest[OFF]
+    03-17 13:07:41.511: passive provider -registration 10246/com.google.android.gms[fused_location_provider]/2AEF4C68
+    03-17 14:07:41.373: network provider stationary/idle unthrottled, request = ProviderRequest[@+6h0m0s0ms, LOW_POWER, WorkSource{10236 com.google.android.as}]
+    03-17 14:08:11.508: network provider stationary/idle throttled, request = ProviderRequest[OFF]
+    03-17 16:08:11.541: network provider stationary/idle unthrottled, request = ProviderRequest[@+6h0m0s0ms, LOW_POWER, WorkSource{10236 com.google.android.as}]
+    03-17 16:08:41.777: network provider stationary/idle throttled, request = ProviderRequest[OFF]
+    03-17 16:10:54.901: network provider stationary/idle unthrottled, request = ProviderRequest[@+6h0m0s0ms, LOW_POWER, WorkSource{10236 com.google.android.as}]
+    03-17 17:13:42.234: fused provider +registration 1000/android[DeviceIdleController]/321A6ACE -> Request[@0 HIGH_ACCURACY, maxUpdates=1, WorkSource{1000 android}]
+    03-17 17:13:42.235: fused provider client 1000/android[DeviceIdleController]/321A6ACE -> foreground
+    03-17 17:13:42.252: fused provider request = ProviderRequest[@0, HIGH_ACCURACY, WorkSource{1000 android}]
+    03-17 17:13:42.253: gps provider +registration 1000/android[DeviceIdleController]/8418A9A8 -> Request[@+1s0ms HIGH_ACCURACY, minUpdateDistance=5.0, WorkSource{1000 android}]
+    03-17 17:13:42.254: gps provider client 1000/android[DeviceIdleController]/8418A9A8 -> foreground
+    03-17 17:13:42.264: gps provider request = ProviderRequest[@+1s0ms, HIGH_ACCURACY, WorkSource{1000 android}]
+    03-17 17:13:42.278: gps provider +registration 10246/com.google.android.gms[fused_location_provider]/F3D1B130 -> Request[@0 HIGH_ACCURACY, hiddenFromAppOps, WorkSource{1000 android}]
+    03-17 17:13:42.278: gps provider client 10246/com.google.android.gms[fused_location_provider]/F3D1B130 -> foreground
+    03-17 17:13:42.279: gps provider request = ProviderRequest[@0, HIGH_ACCURACY, WorkSource{1000 android}]
+    03-17 17:13:42.283: passive provider +registration 10246/com.google.android.gms[fused_location_provider]/2AEF4C68 -> Request[PASSIVE, minUpdateInterval=0, hiddenFromAppOps, WorkSource{10246 com.google.android.gms}]
+    03-17 17:13:42.284: passive provider client 10246/com.google.android.gms[fused_location_provider]/2AEF4C68 -> foreground
+    03-17 17:13:42.420: fused provider -registration 1000/android[DeviceIdleController]/321A6ACE
+    03-17 17:13:42.420: fused provider request = ProviderRequest[OFF]
+    03-17 17:13:42.433: gps provider -registration 10246/com.google.android.gms[fused_location_provider]/F3D1B130
+    03-17 17:13:42.433: gps provider request = ProviderRequest[@+1s0ms, HIGH_ACCURACY, WorkSource{1000 android}]
+    03-17 17:13:42.440: passive provider -registration 10246/com.google.android.gms[fused_location_provider]/2AEF4C68
+    03-17 17:13:44.784: gps provider -registration 1000/android[DeviceIdleController]/8418A9A8
+    03-17 17:13:44.784: gps provider request = ProviderRequest[OFF]
+    03-17 17:13:44.806: network provider stationary/idle throttled, request = ProviderRequest[OFF]
+    03-17 18:13:44.954: network provider stationary/idle unthrottled, request = ProviderRequest[@+6h0m0s0ms, LOW_POWER, WorkSource{10236 com.google.android.as}]
+    03-17 18:14:15.181: network provider stationary/idle throttled, request = ProviderRequest[OFF]
+    03-17 20:14:15.164: network provider stationary/idle unthrottled, request = ProviderRequest[@+6h0m0s0ms, LOW_POWER, WorkSource{10236 com.google.android.as}]
+    03-17 20:14:45.328: network provider stationary/idle throttled, request = ProviderRequest[OFF]
+    03-18 00:14:45.456: network provider stationary/idle unthrottled, request = ProviderRequest[@+6h0m0s0ms, LOW_POWER, WorkSource{10236 com.google.android.as}]
+    03-18 00:15:15.638: network provider stationary/idle throttled, request = ProviderRequest[OFF]
+    03-18 06:15:15.623: network provider stationary/idle unthrottled, request = ProviderRequest[@+6h0m0s0ms, LOW_POWER, WorkSource{10236 com.google.android.as}]
+    03-18 06:15:45.870: network provider stationary/idle throttled, request = ProviderRequest[OFF]
+    03-18 08:44:45.768: gps provider +registration 10246/com.google.android.gms[location_accuracy]/8283A8F3 -> Request[@0 HIGH_ACCURACY, WorkSource{10246 com.google.android.gms}]
+    03-18 08:44:45.769: gps provider client 10246/com.google.android.gms[location_accuracy]/8283A8F3 -> foreground
+    03-18 08:44:45.773: gps provider request = ProviderRequest[@0, HIGH_ACCURACY, WorkSource{10246 com.google.android.gms}]
+    03-18 08:44:45.774: gps provider stationary/idle throttled, request = ProviderRequest[OFF]
+    03-18 08:44:55.769: gps provider -registration 10246/com.google.android.gms[location_accuracy]/8283A8F3
+    03-18 08:44:55.770: gps provider request = ProviderRequest[OFF]
+    03-18 08:44:55.770: gps provider stationary/idle unthrottled, request = ProviderRequest[OFF]
+    03-18 09:00:53.341: gps provider +registration 10246/com.google.android.gms[location_accuracy]/0096E20B -> Request[@0 HIGH_ACCURACY, WorkSource{10246 com.google.android.gms}]
+    03-18 09:00:53.342: gps provider client 10246/com.google.android.gms[location_accuracy]/0096E20B -> foreground
+    03-18 09:00:53.346: gps provider request = ProviderRequest[@0, HIGH_ACCURACY, WorkSource{10246 com.google.android.gms}]
+    03-18 09:00:53.346: gps provider stationary/idle throttled, request = ProviderRequest[OFF]
+    03-18 09:01:03.340: gps provider -registration 10246/com.google.android.gms[location_accuracy]/0096E20B
+    03-18 09:01:03.341: gps provider request = ProviderRequest[OFF]
+    03-18 09:01:03.341: gps provider stationary/idle unthrottled, request = ProviderRequest[OFF]
+    03-18 09:15:42.288: gps provider +registration 10246/com.google.android.gms[location_accuracy]/4B7870EE -> Request[@0 HIGH_ACCURACY, WorkSource{10246 com.google.android.gms}]
+    03-18 09:15:42.289: gps provider client 10246/com.google.android.gms[location_accuracy]/4B7870EE -> foreground
+    03-18 09:15:42.292: gps provider request = ProviderRequest[@0, HIGH_ACCURACY, WorkSource{10246 com.google.android.gms}]
+    03-18 09:15:42.292: gps provider stationary/idle throttled, request = ProviderRequest[OFF]
+    03-18 09:15:52.288: gps provider -registration 10246/com.google.android.gms[location_accuracy]/4B7870EE
+    03-18 09:15:52.288: gps provider request = ProviderRequest[OFF]
+    03-18 09:15:52.288: gps provider stationary/idle unthrottled, request = ProviderRequest[OFF]
+    03-18 09:19:23.900: gps provider +registration 10246/com.google.android.gms[location_accuracy]/98AAD124 -> Request[@0 HIGH_ACCURACY, WorkSource{10246 com.google.android.gms}]
+    03-18 09:19:23.901: gps provider client 10246/com.google.android.gms[location_accuracy]/98AAD124 -> foreground
+    03-18 09:19:23.905: gps provider request = ProviderRequest[@0, HIGH_ACCURACY, WorkSource{10246 com.google.android.gms}]
+    03-18 09:19:23.905: gps provider stationary/idle throttled, request = ProviderRequest[OFF]
+    03-18 09:19:33.901: gps provider -registration 10246/com.google.android.gms[location_accuracy]/98AAD124
+    03-18 09:19:33.902: gps provider request = ProviderRequest[OFF]
+    03-18 09:19:33.902: gps provider stationary/idle unthrottled, request = ProviderRequest[OFF]
+    03-18 10:05:20.341: gps provider +registration 10246/com.google.android.gms[location_accuracy]/1D3AC73D -> Request[@0 HIGH_ACCURACY, WorkSource{10246 com.google.android.gms}]
+    03-18 10:05:20.342: gps provider client 10246/com.google.android.gms[location_accuracy]/1D3AC73D -> foreground
+    03-18 10:05:20.346: gps provider request = ProviderRequest[@0, HIGH_ACCURACY, WorkSource{10246 com.google.android.gms}]
+    03-18 10:05:20.346: gps provider stationary/idle throttled, request = ProviderRequest[OFF]
+    03-18 10:05:30.342: gps provider -registration 10246/com.google.android.gms[location_accuracy]/1D3AC73D
+    03-18 10:05:30.342: gps provider request = ProviderRequest[OFF]
+    03-18 10:05:30.342: gps provider stationary/idle unthrottled, request = ProviderRequest[OFF]
+    03-18 10:59:10.942: gps provider +registration 10246/com.google.android.gms[location_accuracy]/2AC7EC31 -> Request[@0 HIGH_ACCURACY, WorkSource{10246 com.google.android.gms}]
+    03-18 10:59:10.944: gps provider client 10246/com.google.android.gms[location_accuracy]/2AC7EC31 -> foreground
+    03-18 10:59:10.948: gps provider request = ProviderRequest[@0, HIGH_ACCURACY, WorkSource{10246 com.google.android.gms}]
+    03-18 10:59:10.948: gps provider stationary/idle throttled, request = ProviderRequest[OFF]
+    03-18 10:59:20.940: gps provider -registration 10246/com.google.android.gms[location_accuracy]/2AC7EC31
+    03-18 10:59:20.941: gps provider request = ProviderRequest[OFF]
+    03-18 10:59:20.941: gps provider stationary/idle unthrottled, request = ProviderRequest[OFF]
+    03-18 11:32:53.265: network provider stationary/idle unthrottled, request = ProviderRequest[@+6h0m0s0ms, LOW_POWER, WorkSource{10236 com.google.android.as}]
+    03-18 12:35:33.979: fused provider +registration 1000/android[DeviceIdleController]/321A6ACE -> Request[@0 HIGH_ACCURACY, maxUpdates=1, WorkSource{1000 android}]
+    03-18 12:35:33.981: fused provider client 1000/android[DeviceIdleController]/321A6ACE -> foreground
+    03-18 12:35:34.000: fused provider request = ProviderRequest[@0, HIGH_ACCURACY, WorkSource{1000 android}]
+    03-18 12:35:34.002: gps provider +registration 1000/android[DeviceIdleController]/8418A9A8 -> Request[@+1s0ms HIGH_ACCURACY, minUpdateDistance=5.0, WorkSource{1000 android}]
+    03-18 12:35:34.002: gps provider client 1000/android[DeviceIdleController]/8418A9A8 -> foreground
+    03-18 12:35:34.015: gps provider request = ProviderRequest[@+1s0ms, HIGH_ACCURACY, WorkSource{1000 android}]
+    03-18 12:35:34.032: gps provider +registration 10246/com.google.android.gms[fused_location_provider]/F3D1B130 -> Request[@0 HIGH_ACCURACY, hiddenFromAppOps, WorkSource{1000 android}]
+    03-18 12:35:34.033: gps provider client 10246/com.google.android.gms[fused_location_provider]/F3D1B130 -> foreground
+    03-18 12:35:34.034: gps provider request = ProviderRequest[@0, HIGH_ACCURACY, WorkSource{1000 android}]
+    03-18 12:35:34.039: passive provider +registration 10246/com.google.android.gms[fused_location_provider]/2AEF4C68 -> Request[PASSIVE, minUpdateInterval=0, hiddenFromAppOps, WorkSource{10246 com.google.android.gms}]
+    03-18 12:35:34.039: passive provider client 10246/com.google.android.gms[fused_location_provider]/2AEF4C68 -> foreground
+    03-18 12:35:34.051: network provider +registration 1000/android[GnssService]/DD0D9912 -> Request[@+1s0ms LOW_POWER, duration=+10s0ms, maxUpdates=1, WorkSource{1000 android}]
+    03-18 12:35:34.052: network provider client 1000/android[GnssService]/DD0D9912 -> foreground
+    03-18 12:35:34.054: network provider request = ProviderRequest[@+1s0ms, LOW_POWER, WorkSource{1000 android}]
+    03-18 12:35:37.775: fused provider -registration 1000/android[DeviceIdleController]/321A6ACE
+    03-18 12:35:37.776: fused provider request = ProviderRequest[OFF]
+    03-18 12:35:37.790: gps provider -registration 1000/android[DeviceIdleController]/8418A9A8
+    03-18 12:35:37.812: network provider stationary/idle throttled, request = ProviderRequest[OFF]
+    03-18 12:35:37.812: gps provider stationary/idle throttled, request = ProviderRequest[OFF]
+    03-18 12:35:37.823: network provider -registration 1000/android[GnssService]/DD0D9912
+    03-18 12:35:37.824: network provider request = ProviderRequest[@+6h0m0s0ms, LOW_POWER, WorkSource{10236 com.google.android.as}]
+    03-18 12:35:37.848: gps provider -registration 10246/com.google.android.gms[fused_location_provider]/F3D1B130
+    03-18 12:35:37.848: gps provider request = ProviderRequest[OFF]
+    03-18 12:35:37.848: gps provider stationary/idle unthrottled, request = ProviderRequest[OFF]
+    03-18 12:35:38.000: passive provider -registration 10246/com.google.android.gms[fused_location_provider]/2AEF4C68
+    03-18 13:35:37.932: network provider stationary/idle unthrottled, request = ProviderRequest[@+6h0m0s0ms, LOW_POWER, WorkSource{10236 com.google.android.as}]
+    03-18 13:36:08.081: network provider stationary/idle throttled, request = ProviderRequest[OFF]
+    03-18 14:34:35.662: network provider stationary/idle unthrottled, request = ProviderRequest[@+6h0m0s0ms, LOW_POWER, WorkSource{10236 com.google.android.as}]
+    03-18 14:51:09.753: passive provider -registration 10246/com.google.android.gms[network_location_provider]/AD2EE099
+    03-18 14:51:09.758: passive provider -registration 10246/com.google.android.gms[fused_location_provider]/731C71BF
+    03-18 14:51:10.759: network provider [u0] disabled
+    03-18 14:51:10.768: network provider request = ProviderRequest[OFF]
+    03-18 14:51:10.769: fused provider [u0] disabled
+    03-18 14:51:11.161: network provider [u0] enabled
+    03-18 14:51:11.170: network provider request = ProviderRequest[@+6h0m0s0ms, LOW_POWER, WorkSource{10236 com.google.android.as}]
+    03-18 14:51:11.545: fused provider [u0] enabled
+    03-18 14:51:12.583: passive provider +registration 10246/com.google.android.gms[network_location_provider]/BFFF5CA2 -> Request[PASSIVE, minUpdateInterval=0, hiddenFromAppOps, WorkSource{10246 com.google.android.gms}]
+    03-18 14:51:12.584: passive provider client 10246/com.google.android.gms[network_location_provider]/BFFF5CA2 -> foreground
+    03-18 14:51:12.866: passive provider +registration 10246/com.google.android.gms[fused_location_provider]/CE4E220D -> Request[PASSIVE, minUpdateInterval=0, hiddenFromAppOps, WorkSource{10246 com.google.android.gms}]
+    03-18 14:51:12.874: passive provider client 10246/com.google.android.gms[fused_location_provider]/CE4E220D -> foreground
+    03-19 04:11:19.047: passive provider -registration 10246/com.google.android.gms[network_location_provider]/BFFF5CA2
+    03-19 04:11:19.056: passive provider -registration 10246/com.google.android.gms[fused_location_provider]/CE4E220D
+    03-19 04:11:20.289: passive provider +registration 10246/com.google.android.gms[network_location_provider]/EE8C6A83 -> Request[PASSIVE, minUpdateInterval=0, hiddenFromAppOps, WorkSource{10246 com.google.android.gms}]
+    03-19 04:11:20.290: passive provider client 10246/com.google.android.gms[network_location_provider]/EE8C6A83 -> foreground
+    03-19 04:11:20.713: passive provider +registration 10246/com.google.android.gms[fused_location_provider]/85154135 -> Request[PASSIVE, minUpdateInterval=0, hiddenFromAppOps, WorkSource{10246 com.google.android.gms}]
+    03-19 04:11:20.714: passive provider client 10246/com.google.android.gms[fused_location_provider]/85154135 -> foreground
+    03-19 06:08:26.554: gps provider +registration 10246/com.google.android.gms[location_accuracy]/EEEC9C64 -> Request[@0 HIGH_ACCURACY, WorkSource{10246 com.google.android.gms}]
+    03-19 06:08:26.555: gps provider client 10246/com.google.android.gms[location_accuracy]/EEEC9C64 -> foreground
+    03-19 06:08:26.558: gps provider request = ProviderRequest[@0, HIGH_ACCURACY, WorkSource{10246 com.google.android.gms}]
+    03-19 06:08:36.552: gps provider -registration 10246/com.google.android.gms[location_accuracy]/EEEC9C64
+    03-19 06:08:36.553: gps provider request = ProviderRequest[OFF]
+    03-19 07:28:57.065: gps provider +registration 10246/com.google.android.gms[location_accuracy]/05C37C6F -> Request[@0 HIGH_ACCURACY, WorkSource{10246 com.google.android.gms}]
+    03-19 07:28:57.066: gps provider client 10246/com.google.android.gms[location_accuracy]/05C37C6F -> foreground
+    03-19 07:28:57.072: gps provider request = ProviderRequest[@0, HIGH_ACCURACY, WorkSource{10246 com.google.android.gms}]
+    03-19 07:29:07.065: gps provider -registration 10246/com.google.android.gms[location_accuracy]/05C37C6F
+    03-19 07:29:07.065: gps provider request = ProviderRequest[OFF]
+    03-19 07:47:14.307: gps provider +registration 10246/com.google.android.gms[location_accuracy]/5A13C886 -> Request[@0 HIGH_ACCURACY, WorkSource{10246 com.google.android.gms}]
+    03-19 07:47:14.308: gps provider client 10246/com.google.android.gms[location_accuracy]/5A13C886 -> foreground
+    03-19 07:47:14.311: gps provider request = ProviderRequest[@0, HIGH_ACCURACY, WorkSource{10246 com.google.android.gms}]
+    03-19 07:47:24.311: gps provider -registration 10246/com.google.android.gms[location_accuracy]/5A13C886
+    03-19 07:47:24.312: gps provider request = ProviderRequest[OFF]
+    03-19 08:53:11.482: gps provider +registration 10246/com.google.android.gms[location_accuracy]/E966AD47 -> Request[@0 HIGH_ACCURACY, WorkSource{10246 com.google.android.gms}]
+    03-19 08:53:11.484: gps provider client 10246/com.google.android.gms[location_accuracy]/E966AD47 -> foreground
+    03-19 08:53:11.488: gps provider request = ProviderRequest[@0, HIGH_ACCURACY, WorkSource{10246 com.google.android.gms}]
+    03-19 08:53:21.477: gps provider -registration 10246/com.google.android.gms[location_accuracy]/E966AD47
+    03-19 08:53:21.477: gps provider request = ProviderRequest[OFF]
+    03-19 09:34:36.271: gps provider +registration 10246/com.google.android.gms[location_accuracy]/B4EC6F73 -> Request[@0 HIGH_ACCURACY, WorkSource{10246 com.google.android.gms}]
+    03-19 09:34:36.272: gps provider client 10246/com.google.android.gms[location_accuracy]/B4EC6F73 -> foreground
+    03-19 09:34:36.276: gps provider request = ProviderRequest[@0, HIGH_ACCURACY, WorkSource{10246 com.google.android.gms}]
+    03-19 09:34:46.276: gps provider -registration 10246/com.google.android.gms[location_accuracy]/B4EC6F73
+    03-19 09:34:46.277: gps provider request = ProviderRequest[OFF]
+    03-19 10:39:47.289: gps provider +registration 10246/com.google.android.gms[location_accuracy]/C3A0551E -> Request[@0 HIGH_ACCURACY, WorkSource{10246 com.google.android.gms}]
+    03-19 10:39:47.290: gps provider client 10246/com.google.android.gms[location_accuracy]/C3A0551E -> foreground
+    03-19 10:39:47.292: gps provider request = ProviderRequest[@0, HIGH_ACCURACY, WorkSource{10246 com.google.android.gms}]
+    03-19 10:39:57.301: gps provider -registration 10246/com.google.android.gms[location_accuracy]/C3A0551E
+    03-19 10:39:57.302: gps provider request = ProviderRequest[OFF]
+    03-19 19:11:00.240: passive provider -registration 10246/com.google.android.gms[network_location_provider]/EE8C6A83
+    03-19 19:11:00.245: passive provider -registration 10246/com.google.android.gms[fused_location_provider]/85154135
+    03-19 19:11:01.238: fused provider [u0] disabled
+    03-19 19:11:01.317: fused provider [u0] enabled
+    03-19 19:11:02.311: passive provider +registration 10246/com.google.android.gms[fused_location_provider]/2270F308 -> Request[PASSIVE, minUpdateInterval=0, hiddenFromAppOps, WorkSource{10246 com.google.android.gms}]
+    03-19 19:11:02.312: passive provider client 10246/com.google.android.gms[fused_location_provider]/2270F308 -> foreground
+    03-19 19:11:02.494: passive provider +registration 10246/com.google.android.gms[network_location_provider]/59D7C1C2 -> Request[PASSIVE, minUpdateInterval=0, hiddenFromAppOps, WorkSource{10246 com.google.android.gms}]
+    03-19 19:11:02.495: passive provider client 10246/com.google.android.gms[network_location_provider]/59D7C1C2 -> foreground
+    03-20 06:33:44.852: gps provider +registration 10246/com.google.android.gms[location_accuracy]/B7B058FD -> Request[@0 HIGH_ACCURACY, WorkSource{10246 com.google.android.gms}]
+    03-20 06:33:44.853: gps provider client 10246/com.google.android.gms[location_accuracy]/B7B058FD -> foreground
+    03-20 06:33:44.857: gps provider request = ProviderRequest[@0, HIGH_ACCURACY, WorkSource{10246 com.google.android.gms}]
+    03-20 06:33:54.854: gps provider -registration 10246/com.google.android.gms[location_accuracy]/B7B058FD
+    03-20 06:33:54.855: gps provider request = ProviderRequest[OFF]
+    03-20 07:19:13.390: gps provider +registration 10246/com.google.android.gms[location_accuracy]/ADAD0543 -> Request[@0 HIGH_ACCURACY, WorkSource{10246 com.google.android.gms}]
+    03-20 07:19:13.391: gps provider client 10246/com.google.android.gms[location_accuracy]/ADAD0543 -> foreground
+    03-20 07:19:13.393: gps provider request = ProviderRequest[@0, HIGH_ACCURACY, WorkSource{10246 com.google.android.gms}]
+    03-20 07:19:23.388: gps provider -registration 10246/com.google.android.gms[location_accuracy]/ADAD0543
+    03-20 07:19:23.388: gps provider request = ProviderRequest[OFF]
+    03-20 08:20:20.086: gps provider +registration 10246/com.google.android.gms[location_accuracy]/7EC5510B -> Request[@0 HIGH_ACCURACY, WorkSource{10246 com.google.android.gms}]
+    03-20 08:20:20.087: gps provider client 10246/com.google.android.gms[location_accuracy]/7EC5510B -> foreground
+    03-20 08:20:20.089: gps provider request = ProviderRequest[@0, HIGH_ACCURACY, WorkSource{10246 com.google.android.gms}]
+    03-20 08:20:30.088: gps provider -registration 10246/com.google.android.gms[location_accuracy]/7EC5510B
+    03-20 08:20:30.088: gps provider request = ProviderRequest[OFF]
+    03-20 09:00:57.986: gps provider +registration 10246/com.google.android.gms[location_accuracy]/EF8AE03E -> Request[@0 HIGH_ACCURACY, WorkSource{10246 com.google.android.gms}]
+    03-20 09:00:57.987: gps provider client 10246/com.google.android.gms[location_accuracy]/EF8AE03E -> foreground
+    03-20 09:00:57.990: gps provider request = ProviderRequest[@0, HIGH_ACCURACY, WorkSource{10246 com.google.android.gms}]
+    03-20 09:01:07.987: gps provider -registration 10246/com.google.android.gms[location_accuracy]/EF8AE03E
+    03-20 09:01:07.988: gps provider request = ProviderRequest[OFF]
+    03-20 09:43:02.150: gps provider +registration 10246/com.google.android.gms[location_accuracy]/32B5F130 -> Request[@0 HIGH_ACCURACY, WorkSource{10246 com.google.android.gms}]
+    03-20 09:43:02.151: gps provider client 10246/com.google.android.gms[location_accuracy]/32B5F130 -> foreground
+    03-20 09:43:02.154: gps provider request = ProviderRequest[@0, HIGH_ACCURACY, WorkSource{10246 com.google.android.gms}]
+    03-20 09:43:12.149: gps provider -registration 10246/com.google.android.gms[location_accuracy]/32B5F130
+    03-20 09:43:12.149: gps provider request = ProviderRequest[OFF]
+    03-20 10:21:45.499: gps provider +registration 10246/com.google.android.gms[location_accuracy]/DDDD7FE5 -> Request[@0 HIGH_ACCURACY, WorkSource{10246 com.google.android.gms}]
+    03-20 10:21:45.501: gps provider client 10246/com.google.android.gms[location_accuracy]/DDDD7FE5 -> foreground
+    03-20 10:21:45.502: gps provider request = ProviderRequest[@0, HIGH_ACCURACY, WorkSource{10246 com.google.android.gms}]
+    03-20 10:21:49.337: passive provider delivered location[1] to 1000/android[SLocationService]/34713B41
+    03-20 10:21:49.337: passive provider delivered location[1] to 10246/com.google.android.gms[fused_location_provider]/2270F308
+    03-20 10:21:50.317: gps provider received location[1]
+    03-20 10:21:50.321: gps provider delivered location[1] to 10246/com.google.android.gms[location_accuracy]/DDDD7FE5
+    03-20 10:21:50.323: passive provider delivered location[1] to 10246/com.google.android.gms[network_location_provider]/59D7C1C2
+    03-20 10:21:50.324: passive provider delivered location[1] to 10246/com.google.android.gms[fused_location_provider]/2270F308
+    03-20 10:21:50.328: passive provider delivered location[1] to 1000/android[SLocationService]/34713B41
+    03-20 10:21:50.331: fused provider received location[1]
+    03-20 10:21:50.333: passive provider delivered location[1] to 10246/com.google.android.gms[network_location_provider]/59D7C1C2
+    03-20 10:21:50.334: passive provider delivered location[1] to 1000/android[SLocationService]/34713B41
+    03-20 10:21:50.334: passive provider delivered location[1] to 10246/com.google.android.gms[fused_location_provider]/2270F308
+    03-20 10:21:51.317: gps provider received location[1]
+    03-20 10:21:51.322: gps provider delivered location[1] to 10246/com.google.android.gms[location_accuracy]/DDDD7FE5
+    03-20 10:21:51.323: passive provider delivered location[1] to 10246/com.google.android.gms[network_location_provider]/59D7C1C2
+    03-20 10:21:51.325: passive provider delivered location[1] to 10246/com.google.android.gms[fused_location_provider]/2270F308
+    03-20 10:21:51.327: passive provider delivered location[1] to 1000/android[SLocationService]/34713B41
+    03-20 10:21:51.335: fused provider received location[1]
+    03-20 10:21:51.337: passive provider delivered location[1] to 10246/com.google.android.gms[network_location_provider]/59D7C1C2
+    03-20 10:21:51.338: passive provider delivered location[1] to 1000/android[SLocationService]/34713B41
+    03-20 10:21:51.339: passive provider delivered location[1] to 10246/com.google.android.gms[fused_location_provider]/2270F308
+    03-20 10:21:52.313: gps provider received location[1]
+    03-20 10:21:52.316: gps provider delivered location[1] to 10246/com.google.android.gms[location_accuracy]/DDDD7FE5
+    03-20 10:21:52.317: passive provider delivered location[1] to 10246/com.google.android.gms[network_location_provider]/59D7C1C2
+    03-20 10:21:52.318: passive provider delivered location[1] to 10246/com.google.android.gms[fused_location_provider]/2270F308
+    03-20 10:21:52.319: passive provider delivered location[1] to 1000/android[SLocationService]/34713B41
+    03-20 10:21:52.328: fused provider received location[1]
+    03-20 10:21:52.329: passive provider delivered location[1] to 10246/com.google.android.gms[network_location_provider]/59D7C1C2
+    03-20 10:21:52.331: passive provider delivered location[1] to 10246/com.google.android.gms[fused_location_provider]/2270F308
+    03-20 10:21:52.333: passive provider delivered location[1] to 1000/android[SLocationService]/34713B41
+    03-20 10:21:53.312: gps provider received location[1]
+    03-20 10:21:53.315: gps provider delivered location[1] to 10246/com.google.android.gms[location_accuracy]/DDDD7FE5
+    03-20 10:21:53.317: passive provider delivered location[1] to 10246/com.google.android.gms[network_location_provider]/59D7C1C2
+    03-20 10:21:53.319: passive provider delivered location[1] to 10246/com.google.android.gms[fused_location_provider]/2270F308
+    03-20 10:21:53.321: passive provider delivered location[1] to 1000/android[SLocationService]/34713B41
+    03-20 10:21:53.328: fused provider received location[1]
+    03-20 10:21:53.330: passive provider delivered location[1] to 10246/com.google.android.gms[network_location_provider]/59D7C1C2
+    03-20 10:21:53.331: passive provider delivered location[1] to 10246/com.google.android.gms[fused_location_provider]/2270F308
+    03-20 10:21:53.331: passive provider delivered location[1] to 1000/android[SLocationService]/34713B41
+    03-20 10:21:54.311: gps provider received location[1]
+    03-20 10:21:54.314: gps provider delivered location[1] to 10246/com.google.android.gms[location_accuracy]/DDDD7FE5
+    03-20 10:21:54.315: passive provider delivered location[1] to 10246/com.google.android.gms[network_location_provider]/59D7C1C2
+    03-20 10:21:54.317: passive provider delivered location[1] to 10246/com.google.android.gms[fused_location_provider]/2270F308
+    03-20 10:21:54.320: passive provider delivered location[1] to 1000/android[SLocationService]/34713B41
+    03-20 10:21:54.326: fused provider received location[1]
+    03-20 10:21:54.328: passive provider delivered location[1] to 10246/com.google.android.gms[network_location_provider]/59D7C1C2
+    03-20 10:21:54.329: passive provider delivered location[1] to 1000/android[SLocationService]/34713B41
+    03-20 10:21:54.329: passive provider delivered location[1] to 10246/com.google.android.gms[fused_location_provider]/2270F308
+    03-20 10:21:55.312: gps provider received location[1]
+    03-20 10:21:55.315: gps provider delivered location[1] to 10246/com.google.android.gms[location_accuracy]/DDDD7FE5
+    03-20 10:21:55.318: passive provider delivered location[1] to 10246/com.google.android.gms[network_location_provider]/59D7C1C2
+    03-20 10:21:55.320: passive provider delivered location[1] to 10246/com.google.android.gms[fused_location_provider]/2270F308
+    03-20 10:21:55.322: passive provider delivered location[1] to 1000/android[SLocationService]/34713B41
+    03-20 10:21:55.329: fused provider received location[1]
+    03-20 10:21:55.330: passive provider delivered location[1] to 10246/com.google.android.gms[network_location_provider]/59D7C1C2
+    03-20 10:21:55.332: passive provider delivered location[1] to 1000/android[SLocationService]/34713B41
+    03-20 10:21:55.332: passive provider delivered location[1] to 10246/com.google.android.gms[fused_location_provider]/2270F308
+    03-20 10:21:55.504: gps provider -registration 10246/com.google.android.gms[location_accuracy]/DDDD7FE5
+    03-20 10:21:55.504: gps provider request = ProviderRequest[OFF]
+    03-20 10:29:17.374: fused provider received location[1]
+    03-20 10:29:17.376: passive provider delivered location[1] to 10246/com.google.android.gms[network_location_provider]/59D7C1C2
+    03-20 10:29:17.378: passive provider delivered location[1] to 10246/com.google.android.gms[fused_location_provider]/2270F308
+    03-20 10:29:17.379: passive provider delivered location[1] to 1000/android[SLocationService]/34713B41
+    03-20 10:39:17.482: fused provider received location[1]
+    03-20 10:39:17.486: passive provider delivered location[1] to 10246/com.google.android.gms[network_location_provider]/59D7C1C2
+    03-20 10:39:17.488: passive provider delivered location[1] to 1000/android[SLocationService]/34713B41
+    03-20 10:39:17.489: passive provider delivered location[1] to 10246/com.google.android.gms[fused_location_provider]/2270F308
+    03-20 10:49:17.580: fused provider received location[1]
+    03-20 10:49:17.581: passive provider delivered location[1] to 10246/com.google.android.gms[network_location_provider]/59D7C1C2
+    03-20 10:49:17.581: passive provider delivered location[1] to 1000/android[SLocationService]/34713B41
+    03-20 10:49:17.582: passive provider delivered location[1] to 10246/com.google.android.gms[fused_location_provider]/2270F308
+    03-20 10:59:17.691: fused provider received location[1]
+    03-20 10:59:17.693: passive provider delivered location[1] to 10246/com.google.android.gms[network_location_provider]/59D7C1C2
+    03-20 10:59:17.696: passive provider delivered location[1] to 1000/android[SLocationService]/34713B41
+    03-20 10:59:17.696: passive provider delivered location[1] to 10246/com.google.android.gms[fused_location_provider]/2270F308
+    03-20 11:09:17.797: fused provider received location[1]
+    03-20 11:09:17.799: passive provider delivered location[1] to 10246/com.google.android.gms[network_location_provider]/59D7C1C2
+    03-20 11:09:17.804: passive provider delivered location[1] to 1000/android[SLocationService]/34713B41
+    03-20 11:09:17.804: passive provider delivered location[1] to 10246/com.google.android.gms[fused_location_provider]/2270F308
+    03-20 11:19:17.897: fused provider received location[1]
+    03-20 11:19:17.900: passive provider delivered location[1] to 10246/com.google.android.gms[network_location_provider]/59D7C1C2
+    03-20 11:19:17.901: passive provider delivered location[1] to 1000/android[SLocationService]/34713B41
+    03-20 11:19:17.902: passive provider delivered location[1] to 10246/com.google.android.gms[fused_location_provider]/2270F308
+    03-20 11:29:18.016: fused provider received location[1]
+    03-20 11:29:18.018: passive provider delivered location[1] to 10246/com.google.android.gms[network_location_provider]/59D7C1C2
+    03-20 11:29:18.020: passive provider delivered location[1] to 1000/android[SLocationService]/34713B41
+    03-20 11:29:18.021: passive provider delivered location[1] to 10246/com.google.android.gms[fused_location_provider]/2270F308
+    03-20 11:39:18.124: fused provider received location[1]
+    03-20 11:39:18.125: passive provider delivered location[1] to 10246/com.google.android.gms[network_location_provider]/59D7C1C2
+    03-20 11:39:18.127: passive provider delivered location[1] to 1000/android[SLocationService]/34713B41
+    03-20 11:39:18.128: passive provider delivered location[1] to 10246/com.google.android.gms[fused_location_provider]/2270F308
+    03-20 11:49:18.228: fused provider received location[1]
+    03-20 11:49:18.230: passive provider delivered location[1] to 10246/com.google.android.gms[network_location_provider]/59D7C1C2
+    03-20 11:49:18.232: passive provider delivered location[1] to 1000/android[SLocationService]/34713B41
+    03-20 11:49:18.232: passive provider delivered location[1] to 10246/com.google.android.gms[fused_location_provider]/2270F308
+    03-20 11:59:18.336: fused provider received location[1]
+    03-20 11:59:18.338: passive provider delivered location[1] to 10246/com.google.android.gms[network_location_provider]/59D7C1C2
+    03-20 11:59:18.342: passive provider delivered location[1] to 1000/android[SLocationService]/34713B41
+    03-20 11:59:18.345: passive provider delivered location[1] to 10246/com.google.android.gms[fused_location_provider]/2270F308
+    03-20 12:09:18.442: fused provider received location[1]
+    03-20 12:09:18.449: passive provider delivered location[1] to 10246/com.google.android.gms[network_location_provider]/59D7C1C2
+    03-20 12:09:18.450: passive provider delivered location[1] to 1000/android[SLocationService]/34713B41
+    03-20 12:09:18.451: passive provider delivered location[1] to 10246/com.google.android.gms[fused_location_provider]/2270F308
+    03-20 12:19:18.550: fused provider received location[1]
+    03-20 12:19:18.553: passive provider delivered location[1] to 10246/com.google.android.gms[network_location_provider]/59D7C1C2
+    03-20 12:19:18.556: passive provider delivered location[1] to 1000/android[SLocationService]/34713B41
+    03-20 12:19:18.556: passive provider delivered location[1] to 10246/com.google.android.gms[fused_location_provider]/2270F308
+    03-20 12:29:18.658: fused provider received location[1]
+    03-20 12:29:18.660: passive provider delivered location[1] to 10246/com.google.android.gms[network_location_provider]/59D7C1C2
+    03-20 12:29:18.666: passive provider delivered location[1] to 10246/com.google.android.gms[fused_location_provider]/2270F308
+    03-20 12:29:18.667: passive provider delivered location[1] to 1000/android[SLocationService]/34713B41
+    03-20 12:39:18.767: fused provider received location[1]
+    03-20 12:39:18.769: passive provider delivered location[1] to 10246/com.google.android.gms[network_location_provider]/59D7C1C2
+    03-20 12:39:18.771: passive provider delivered location[1] to 1000/android[SLocationService]/34713B41
+    03-20 12:39:18.772: passive provider delivered location[1] to 10246/com.google.android.gms[fused_location_provider]/2270F308
+    03-20 12:49:18.875: fused provider received location[1]
+    03-20 12:49:18.877: passive provider delivered location[1] to 10246/com.google.android.gms[network_location_provider]/59D7C1C2
+    03-20 12:49:18.884: passive provider delivered location[1] to 1000/android[SLocationService]/34713B41
+    03-20 12:49:18.884: passive provider delivered location[1] to 10246/com.google.android.gms[fused_location_provider]/2270F308
+    03-20 12:59:18.980: fused provider received location[1]
+    03-20 12:59:18.983: passive provider delivered location[1] to 10246/com.google.android.gms[network_location_provider]/59D7C1C2
+    03-20 12:59:18.988: passive provider delivered location[1] to 1000/android[SLocationService]/34713B41
+    03-20 12:59:18.989: passive provider delivered location[1] to 10246/com.google.android.gms[fused_location_provider]/2270F308
+    03-20 13:09:19.087: fused provider received location[1]
+    03-20 13:09:19.090: passive provider delivered location[1] to 10246/com.google.android.gms[network_location_provider]/59D7C1C2
+    03-20 13:09:19.093: passive provider delivered location[1] to 1000/android[SLocationService]/34713B41
+    03-20 13:09:19.094: passive provider delivered location[1] to 10246/com.google.android.gms[fused_location_provider]/2270F308
+    03-20 13:19:19.194: fused provider received location[1]
+    03-20 13:19:19.196: passive provider delivered location[1] to 10246/com.google.android.gms[network_location_provider]/59D7C1C2
+    03-20 13:19:19.199: passive provider delivered location[1] to 1000/android[SLocationService]/34713B41
+    03-20 13:19:19.201: passive provider delivered location[1] to 10246/com.google.android.gms[fused_location_provider]/2270F308
+    03-20 13:29:19.301: fused provider received location[1]
+    03-20 13:29:19.302: passive provider delivered location[1] to 10246/com.google.android.gms[network_location_provider]/59D7C1C2
+    03-20 13:29:19.305: passive provider delivered location[1] to 1000/android[SLocationService]/34713B41
+    03-20 13:29:19.310: passive provider delivered location[1] to 10246/com.google.android.gms[fused_location_provider]/2270F308
+    03-20 13:39:19.408: fused provider received location[1]
+    03-20 13:39:19.410: passive provider delivered location[1] to 10246/com.google.android.gms[network_location_provider]/59D7C1C2
+    03-20 13:39:19.417: passive provider delivered location[1] to 1000/android[SLocationService]/34713B41
+    03-20 13:39:19.418: passive provider delivered location[1] to 10246/com.google.android.gms[fused_location_provider]/2270F308
+    03-20 13:49:19.515: fused provider received location[1]
+    03-20 13:49:19.517: passive provider delivered location[1] to 10246/com.google.android.gms[network_location_provider]/59D7C1C2
+    03-20 13:49:19.522: passive provider delivered location[1] to 1000/android[SLocationService]/34713B41
+    03-20 13:49:19.522: passive provider delivered location[1] to 10246/com.google.android.gms[fused_location_provider]/2270F308
+    03-20 13:59:19.622: fused provider received location[1]
+    03-20 13:59:19.624: passive provider delivered location[1] to 10246/com.google.android.gms[network_location_provider]/59D7C1C2
+    03-20 13:59:19.630: passive provider delivered location[1] to 1000/android[SLocationService]/34713B41
+    03-20 13:59:19.631: passive provider delivered location[1] to 10246/com.google.android.gms[fused_location_provider]/2270F308
+    03-20 14:09:19.731: fused provider received location[1]
+    03-20 14:09:19.733: passive provider delivered location[1] to 10246/com.google.android.gms[network_location_provider]/59D7C1C2
+    03-20 14:09:19.735: passive provider delivered location[1] to 10246/com.google.android.gms[fused_location_provider]/2270F308
+    03-20 14:09:19.736: passive provider delivered location[1] to 1000/android[SLocationService]/34713B41
+    03-20 14:19:19.836: fused provider received location[1]
+    03-20 14:19:19.838: passive provider delivered location[1] to 10246/com.google.android.gms[network_location_provider]/59D7C1C2
+    03-20 14:19:19.840: passive provider delivered location[1] to 1000/android[SLocationService]/34713B41
+    03-20 14:19:19.847: passive provider delivered location[1] to 10246/com.google.android.gms[fused_location_provider]/2270F308
+    03-20 14:29:19.946: fused provider received location[1]
+    03-20 14:29:19.948: passive provider delivered location[1] to 10246/com.google.android.gms[network_location_provider]/59D7C1C2
+    03-20 14:29:19.950: passive provider delivered location[1] to 1000/android[SLocationService]/34713B41
+    03-20 14:29:19.952: passive provider delivered location[1] to 10246/com.google.android.gms[fused_location_provider]/2270F308
+    03-20 14:39:20.053: fused provider received location[1]
+    03-20 14:39:20.056: passive provider delivered location[1] to 10246/com.google.android.gms[network_location_provider]/59D7C1C2
+    03-20 14:39:20.060: passive provider delivered location[1] to 1000/android[SLocationService]/34713B41
+    03-20 14:39:20.061: passive provider delivered location[1] to 10246/com.google.android.gms[fused_location_provider]/2270F308
+    03-20 14:49:20.161: fused provider received location[1]
+    03-20 14:49:20.163: passive provider delivered location[1] to 10246/com.google.android.gms[network_location_provider]/59D7C1C2
+    03-20 14:49:20.164: passive provider delivered location[1] to 1000/android[SLocationService]/34713B41
+    03-20 14:49:20.165: passive provider delivered location[1] to 10246/com.google.android.gms[fused_location_provider]/2270F308
+    03-20 14:59:20.268: fused provider received location[1]
+    03-20 14:59:20.270: passive provider delivered location[1] to 10246/com.google.android.gms[network_location_provider]/59D7C1C2
+    03-20 14:59:20.277: passive provider delivered location[1] to 1000/android[SLocationService]/34713B41
+    03-20 14:59:20.278: passive provider delivered location[1] to 10246/com.google.android.gms[fused_location_provider]/2270F308
+    03-20 15:09:20.377: fused provider received location[1]
+    03-20 15:09:20.379: passive provider delivered location[1] to 10246/com.google.android.gms[network_location_provider]/59D7C1C2
+    03-20 15:09:20.382: passive provider delivered location[1] to 10246/com.google.android.gms[fused_location_provider]/2270F308
+    03-20 15:09:20.384: passive provider delivered location[1] to 1000/android[SLocationService]/34713B41
+    03-20 15:19:20.483: fused provider received location[1]
+    03-20 15:19:20.489: passive provider delivered location[1] to 10246/com.google.android.gms[network_location_provider]/59D7C1C2
+    03-20 15:19:20.491: passive provider delivered location[1] to 10246/com.google.android.gms[fused_location_provider]/2270F308
+    03-20 15:19:20.491: passive provider delivered location[1] to 1000/android[SLocationService]/34713B41
+    03-20 15:29:20.584: fused provider received location[1]
+    03-20 15:29:20.585: passive provider delivered location[1] to 10246/com.google.android.gms[network_location_provider]/59D7C1C2
+    03-20 15:29:20.587: passive provider delivered location[1] to 1000/android[SLocationService]/34713B41
+    03-20 15:29:20.588: passive provider delivered location[1] to 10246/com.google.android.gms[fused_location_provider]/2270F308
+    03-20 15:39:20.695: fused provider received location[1]
+    03-20 15:39:20.697: passive provider delivered location[1] to 10246/com.google.android.gms[network_location_provider]/59D7C1C2
+    03-20 15:39:20.701: passive provider delivered location[1] to 10246/com.google.android.gms[fused_location_provider]/2270F308
+    03-20 15:39:20.701: passive provider delivered location[1] to 1000/android[SLocationService]/34713B41
+    03-20 15:49:20.805: fused provider received location[1]
+    03-20 15:49:20.813: passive provider delivered location[1] to 10246/com.google.android.gms[network_location_provider]/59D7C1C2
+    03-20 15:49:20.816: passive provider delivered location[1] to 10246/com.google.android.gms[fused_location_provider]/2270F308
+    03-20 15:49:20.816: passive provider delivered location[1] to 1000/android[SLocationService]/34713B41
+    03-20 15:59:20.913: fused provider received location[1]
+    03-20 15:59:20.915: passive provider delivered location[1] to 10246/com.google.android.gms[network_location_provider]/59D7C1C2
+    03-20 15:59:20.916: passive provider delivered location[1] to 10246/com.google.android.gms[fused_location_provider]/2270F308
+    03-20 15:59:20.917: passive provider delivered location[1] to 1000/android[SLocationService]/34713B41
+    03-20 16:09:21.021: fused provider received location[1]
+    03-20 16:09:21.023: passive provider delivered location[1] to 10246/com.google.android.gms[network_location_provider]/59D7C1C2
+    03-20 16:09:21.025: passive provider delivered location[1] to 1000/android[SLocationService]/34713B41
+    03-20 16:09:21.026: passive provider delivered location[1] to 10246/com.google.android.gms[fused_location_provider]/2270F308
+    03-20 16:19:21.128: fused provider received location[1]
+    03-20 16:19:21.130: passive provider delivered location[1] to 10246/com.google.android.gms[network_location_provider]/59D7C1C2
+    03-20 16:19:21.134: passive provider delivered location[1] to 1000/android[SLocationService]/34713B41
+    03-20 16:19:21.134: passive provider delivered location[1] to 10246/com.google.android.gms[fused_location_provider]/2270F308
+  Mock Location Record:
