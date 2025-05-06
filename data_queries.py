@@ -7,6 +7,9 @@ from auth import encrypt_password, fernet
 from fastapi import HTTPException
 from fastapi.responses import JSONResponse
 import datetime
+import datetime
+import psycopg2.extras
+from database_config import get_db_connection
 
 def create_campaign(campaign_name: str, user_id: int, device_ids: list) -> int:
     connection = get_db_connection()
@@ -136,10 +139,6 @@ def get_campaign_data_by_id(id_campaign):
             cursor.close()
             connection.close()
 
-
-import datetime
-import psycopg2.extras
-from database_config import get_db_connection
 
 def get_all_campaigns_data(page: int = 1, limit: int = 10):
     conn = get_db_connection()
@@ -373,10 +372,6 @@ def get_latest_campaign_with_unified_data(page: int = 1, limit: int = 10):
             cursor.close()
             connection.close()
 
-
-import datetime
-import psycopg2.extras
-from database_config import get_db_connection
 
 def get_campaign_with_unified_data_by_id(campaign_id: int, page: int = 0, limit: int = 0):
     conn = get_db_connection()

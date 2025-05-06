@@ -1,5 +1,5 @@
 import asyncio
-from fastapi import FastAPI, HTTPException, Depends, status, Form, WebSocket, Query
+from fastapi import FastAPI, HTTPException, Depends, status, Form, WebSocket, Query, Path
 from fastapi.responses import JSONResponse
 import threading
 import uvicorn
@@ -57,6 +57,11 @@ SECRET_KEY = os.environ.get("SECRET_KEY")
 ALGORITHM = os.environ.get("ALGORITHM")
 
 oauth2_scheme = OAuth2PasswordBearer(tokenUrl="/auth/login")
+
+ALLOWED_TABLES = {
+    "gsm": "gsm_data",
+    "lte": "lte_data"
+}
 
 def get_current_user(token: str = Depends(oauth2_scheme)):
     try:
@@ -206,6 +211,20 @@ async def start_campaign(
     device_ids: str = Form(...),
     current_user: dict = Depends(require_role(["admin", "superadmin"]))
 ):
+    # cek apakah ada campaign active atau tidak
+    conn_check = get_db_connection()
+    try:
+        with conn_check.cursor() as cur:
+            cur.execute("SELECT COUNT(*) FROM campaign WHERE status = %s", ('active',))
+            active_count = cur.fetchone()[0]
+        if active_count > 0:
+            raise HTTPException(
+                status_code=400,
+                detail="already has an active campaign. Cannot create a new one"
+            )
+    finally:
+        conn_check.close()
+
     # === 1. Parse device_ids dari string ke list of integer ===
     try:
         device_id_list = [int(x.strip()) for x in device_ids.split(",") if x.strip()]
@@ -768,6 +787,54 @@ def list_groups(page: int = 1, limit: int = 10):
             }
     except Exception as e:
         raise HTTPException(status_code=500, detail=str(e))
+    finally:
+        conn.close()
+
+@app.post("/update-status-alert/{data_type}", status_code=200)
+def update_status_alert(
+    data_type: str = Path(..., description="Must be 'gsm' or 'lte'"),
+    id: int = Form(...),
+    campaign_id: int = Form(...),
+    current_user: dict = Depends(require_role(["admin", "superadmin"]))
+):
+    # 1. Validate data_type
+    table = ALLOWED_TABLES.get(data_type.lower())
+    if not table:
+        raise HTTPException(
+            status_code=status.HTTP_400_BAD_REQUEST,
+            detail="data_type must be 'gsm' or 'lte'"
+        )
+
+    conn = get_db_connection()
+    try:
+        with conn.cursor() as cur:
+            # 2. Build and execute the UPDATE
+            sql = f"""
+                UPDATE {table}
+                SET status_alert = TRUE
+                WHERE id = %s AND campaign_id = %s
+            """
+            cur.execute(sql, (id, campaign_id))
+            if cur.rowcount == 0:
+                raise HTTPException(
+                    status_code=status.HTTP_404_NOT_FOUND,
+                    detail=f"No row found in {table} for given id & campaign_id"
+                )
+            conn.commit()
+
+        return JSONResponse({
+            "status": "success",
+            "message": f"status_alert on {data_type} has been set to TRUE"
+        })
+    except HTTPException:
+        conn.rollback()
+        raise
+    except Exception as e:
+        conn.rollback()
+        raise HTTPException(
+            status_code=status.HTTP_500_INTERNAL_SERVER_ERROR,
+            detail=f"Error updating status_alert: {e}"
+        )
     finally:
         conn.close()
 

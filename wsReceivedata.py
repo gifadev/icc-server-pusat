@@ -5,6 +5,19 @@ import psycopg2
 import psycopg2.extras
 from database_config import get_db_connection
 
+def to_int(val):
+    try:
+        return int(val)
+    except (TypeError, ValueError):
+        return None
+
+def to_float(val):
+    try:
+        return float(val)
+    except (TypeError, ValueError):
+        return None
+
+
 # Fungsi untuk upsert device berdasarkan serial_number
 def upsert_device(cur, device):
     query = """
@@ -25,33 +38,58 @@ def upsert_device(cur, device):
 def insert_gsm_data(cur, campaign_id, device_id, gsm_list):
     query = """
     INSERT INTO gsm_data (
-        campaign_id, device_id, mcc, mnc, operator, local_area_code, 
-        arfcn, cell_identity, rxlev, rxlev_access_min, status, created_at
+        campaign_id,
+        device_id,
+        mcc,
+        mnc,
+        operator,
+        local_area_code,
+        arfcn,
+        cell_identity,
+        rxlev,
+        rxlev_access_min,
+        status,
+        rssi,
+        created_at
     )
-    VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, CURRENT_TIMESTAMP)
+    VALUES (
+        %s, %s, %s, %s, %s,
+        %s, %s, %s, %s, %s,
+        %s, %s, CURRENT_TIMESTAMP
+    )
     ON CONFLICT (campaign_id, mcc, mnc, local_area_code, cell_identity)
     DO UPDATE SET
-        operator = EXCLUDED.operator,
-        arfcn = EXCLUDED.arfcn,
-        rxlev = EXCLUDED.rxlev,
-        rxlev_access_min = EXCLUDED.rxlev_access_min,
-        status = EXCLUDED.status,
-        created_at = CURRENT_TIMESTAMP;
+        operator          = EXCLUDED.operator,
+        arfcn             = EXCLUDED.arfcn,
+        rxlev             = EXCLUDED.rxlev,
+        rxlev_access_min  = EXCLUDED.rxlev_access_min,
+        status            = EXCLUDED.status,
+        rssi              = EXCLUDED.rssi,
+        created_at        = CURRENT_TIMESTAMP;
     """
+
     for gsm in gsm_list:
+        raw_mcc = gsm.get("mcc")
+        raw_mnc = gsm.get("mnc")
+
+        #jika mcc dan mnc nya kosong tidak disimpan ke db
+        if not raw_mcc and not raw_mnc:
+            continue
+
         status_value = True if gsm.get("status") is None else bool(gsm["status"])
         cur.execute(query, (
             campaign_id,
             device_id,
-            gsm["mcc"],
-            gsm["mnc"],
-            gsm["operator"],
-            int(gsm["local_area_code"]) if gsm.get("local_area_code") is not None else None,
-            int(gsm["arfcn"]) if gsm.get("arfcn") is not None else None,
-            int(gsm["cell_identity"]) if gsm.get("cell_identity") is not None else None,
-            int(gsm["rxlev"]) if gsm.get("rxlev") is not None else None,
-            float(gsm["rxlev_access_min"]) if gsm.get("rxlev_access_min") is not None else None,
-            status_value
+            to_int(gsm.get("mcc")),
+            to_int(gsm.get("mnc")),
+            gsm.get("operator"),
+            to_int(gsm.get("local_area_code")),
+            to_int(gsm.get("arfcn")),
+            to_int(gsm.get("cell_identity")),
+            to_int(gsm.get("rxlev")),
+            to_float(gsm.get("rxlev_access_min")),
+            status_value,
+            to_float(gsm.get("rssi"))
         ))
 
 
@@ -59,37 +97,64 @@ def insert_gsm_data(cur, campaign_id, device_id, gsm_list):
 def insert_lte_data(cur, campaign_id, device_id, lte_list):
     query = """
     INSERT INTO lte_data (
-        campaign_id, device_id, mcc, mnc, operator, arfcn, cell_identity, 
-        tracking_area_code, frequency_band_indicator, signal_level, snr, rx_lev_min, status, created_at
+        campaign_id,
+        device_id,
+        mcc,
+        mnc,
+        operator,
+        arfcn,
+        cell_identity,
+        tracking_area_code,
+        frequency_band_indicator,
+        signal_level,
+        snr,
+        rx_lev_min,
+        status,
+        rssi,
+        created_at
     )
-    VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, CURRENT_TIMESTAMP)
+    VALUES (
+        %s, %s, %s, %s, %s,
+        %s, %s, %s, %s, %s,
+        %s, %s, %s, %s, CURRENT_TIMESTAMP
+    )
     ON CONFLICT (campaign_id, mcc, mnc, tracking_area_code, cell_identity)
     DO UPDATE SET
-        operator = EXCLUDED.operator,
-        arfcn = EXCLUDED.arfcn,
-        frequency_band_indicator = EXCLUDED.frequency_band_indicator,
-        signal_level = EXCLUDED.signal_level,
-        snr = EXCLUDED.snr,
-        rx_lev_min = EXCLUDED.rx_lev_min,
-        status = EXCLUDED.status,
-        created_at = CURRENT_TIMESTAMP;
+        operator                  = EXCLUDED.operator,
+        arfcn                     = EXCLUDED.arfcn,
+        frequency_band_indicator  = EXCLUDED.frequency_band_indicator,
+        signal_level              = EXCLUDED.signal_level,
+        snr                       = EXCLUDED.snr,
+        rx_lev_min                = EXCLUDED.rx_lev_min,
+        status                    = EXCLUDED.status,
+        rssi                      = EXCLUDED.rssi,
+        created_at                = CURRENT_TIMESTAMP;
     """
+
     for lte in lte_list:
+        raw_mcc = lte.get("mcc")
+        raw_mnc = lte.get("mnc")
+
+        #jika mcc dan mnc nya kosong tidak disimpan ke db
+        if not raw_mcc and not raw_mnc:
+            continue
+
         status_value = True if lte.get("status") is None else bool(lte["status"])
         cur.execute(query, (
             campaign_id,
             device_id,
-            lte["mcc"],
-            lte["mnc"],
-            lte["operator"],
-            lte["arfcn"],
-            lte["cell_identity"],
-            lte["tracking_area_code"],
-            lte["frequency_band_indicator"],
-            lte["signal_level"],
-            lte["snr"],
-            int(lte["rx_lev_min"]) if lte.get("rx_lev_min") is not None else None,
-            status_value
+            to_int(lte.get("mcc")),
+            to_int(lte.get("mnc")),
+            lte.get("operator"),
+            to_int(lte.get("arfcn")),
+            to_int(lte.get("cell_identity")),
+            to_int(lte.get("tracking_area_code")),
+            to_int(lte.get("frequency_band_indicator")),
+            to_int(lte.get("signal_level")),
+            to_int(lte.get("snr")),
+            to_int(lte.get("rx_lev_min")),
+            status_value,
+            to_float(lte.get("rssi"))
         ))
 
 
