@@ -833,17 +833,59 @@ def device_information():
         running_count = cursor.fetchone()[0]
 
         # Threat BTS: jumlah data GSM dan LTE dengan status FALSE
-        cursor.execute("SELECT COUNT(*) FROM gsm_data WHERE status = FALSE")
+        # cursor.execute("SELECT COUNT(*) FROM gsm_data WHERE status = FALSE")
+        # threat_gsm = cursor.fetchone()[0]
+        # cursor.execute("SELECT COUNT(*) FROM lte_data WHERE status = FALSE")
+        # threat_lte = cursor.fetchone()[0]
+        # threat_bts = threat_gsm + threat_lte
+        cursor.execute("""
+            SELECT COUNT(*) 
+            FROM gsm_data
+            WHERE status = FALSE
+            AND campaign_id = (
+                SELECT MAX(campaign_id)
+                FROM gsm_data
+            )
+        """)
         threat_gsm = cursor.fetchone()[0]
-        cursor.execute("SELECT COUNT(*) FROM lte_data WHERE status = FALSE")
+        cursor.execute("""
+            SELECT COUNT(*) 
+            FROM lte_data
+            WHERE status = FALSE
+            AND campaign_id = (
+                SELECT MAX(campaign_id)
+                FROM lte_data
+            )
+        """)
         threat_lte = cursor.fetchone()[0]
         threat_bts = threat_gsm + threat_lte
 
         # Total BTS: total data dari gsm_data dan lte_data
-        cursor.execute("SELECT COUNT(*) FROM gsm_data")
+        # cursor.execute("SELECT COUNT(*) FROM gsm_data")
+        # total_gsm = cursor.fetchone()[0]
+        # cursor.execute("SELECT COUNT(*) FROM lte_data")
+        # total_lte = cursor.fetchone()[0]
+        # total_bts = total_gsm + total_lte
+
+        cursor.execute("""
+        SELECT COUNT(*) 
+        FROM gsm_data
+        WHERE campaign_id = (
+            SELECT MAX(campaign_id) FROM gsm_data
+        )
+        """)
         total_gsm = cursor.fetchone()[0]
-        cursor.execute("SELECT COUNT(*) FROM lte_data")
+
+        # Total LTE untuk campaign_id terbaru
+        cursor.execute("""
+            SELECT COUNT(*) 
+            FROM lte_data
+            WHERE campaign_id = (
+                SELECT MAX(campaign_id) FROM lte_data
+            )
+        """)
         total_lte = cursor.fetchone()[0]
+
         total_bts = total_gsm + total_lte
 
         # Count per generation:
