@@ -59,14 +59,14 @@ async def register(
                     if group["user_id"] is not None:
                         raise HTTPException(status_code=400, detail="Group sudah dipilih oleh user lain")
                 
-                encrypt_pass = encrypt_password(password)
+                encrypted_password = encrypt_password(password) 
                 # Insert user baru ke tabel users
                 user_query = """
                     INSERT INTO users (username, password, role, created_at)
                     VALUES (%s, %s, %s, CURRENT_TIMESTAMP)
                     RETURNING id, username, role, created_at;
                 """
-                cur.execute(user_query, (username, encrypt_pass, role))
+                cur.execute(user_query, (username, encrypted_password, role))
                 new_user = cur.fetchone()
                 user_id = new_user["id"]
                 

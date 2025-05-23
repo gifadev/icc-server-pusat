@@ -332,7 +332,11 @@ async def start_campaign(
     })
 
 @app.websocket("/ws/{campaign_id}")
-async def websocket_endpoint(websocket: WebSocket, campaign_id: int):
+async def websocket_endpoint(
+    websocket: WebSocket, 
+    campaign_id: int,
+    current_user: dict = Depends(require_role(["admin", "superadmin"]))
+    ):
     await manager.connect(campaign_id, websocket)
     print(f"Klien WebSocket terhubung untuk campaign {campaign_id}")
     try:
@@ -389,7 +393,8 @@ async def websocket_endpoint(websocket: WebSocket, campaign_id: int):
 
 @app.post("/pause-campaign", status_code=200)
 def pause_campaign(
-    campaign_id: int = Form(...)
+    campaign_id: int = Form(...),
+    current_user: dict = Depends(require_role(["admin", "superadmin"]))
 ):
     conn = get_db_connection()
     try:
@@ -415,7 +420,8 @@ def pause_campaign(
 
 @app.post("/resume-campaign", status_code=200)
 def resume_campaign(
-    campaign_id: int = Form(...)
+    campaign_id: int = Form(...),
+    current_user: dict = Depends(require_role(["admin", "superadmin"]))
 ):
     conn = get_db_connection()
     try:
@@ -450,7 +456,8 @@ def resume_campaign(
 
 @app.post("/stop-capture", status_code=200)
 async def stop_campaign(
-    campaign_id: int = Form(...)
+    campaign_id: int = Form(...),
+    current_user: dict = Depends(require_role(["admin", "superadmin"]))
 ):
     # === 1. Ambil daftar device_id dari tabel campaign_devices untuk campaign_id yang diberikan ===
     conn = get_db_connection()
@@ -561,7 +568,9 @@ async def stop_campaign(
     })
 
 @app.delete("/campaign/{campaign_id}")
-def delete_campaign(campaign_id: int):
+def delete_campaign(campaign_id: int,
+                    current_user: dict = Depends(require_role(["admin", "superadmin"]))
+                    ):
     result = delete_campaign_by_id(campaign_id)
     if result is None:
         raise HTTPException(status_code=500, detail="Error deleting campaign or campaign not found")
@@ -571,7 +580,10 @@ def delete_campaign(campaign_id: int):
     }
 
 @app.get("/all-campaigns")
-def get_all_campaigns(page: int = 0, limit: int = 0):
+def get_all_campaigns(page: int = 0, 
+                      limit: int = 0,
+                      current_user: dict = Depends(require_role(["admin", "superadmin"]))
+                      ):
     try:
         result = get_all_campaigns_data(page, limit)
         return result
@@ -582,7 +594,8 @@ def get_all_campaigns(page: int = 0, limit: int = 0):
 @app.get("/campaign-data/{campaign_id}")
 def get_campaign_data_unified(
     campaign_id: int, 
-    page: int = 0, limit: int = 0
+    page: int = 0, limit: int = 0,
+    current_user: dict = Depends(require_role(["admin", "superadmin"]))
 ):
     result = get_campaign_with_unified_data_by_id(campaign_id, page=page, limit=limit)
     if result is None:
@@ -594,7 +607,8 @@ def search_campaign_data_endpoint(
     id_campaign: int,
     q: str,
     page: int = 1,
-    limit: int = 10
+    limit: int = 10,
+    current_user: dict = Depends(require_role(["admin", "superadmin"]))
 ):
     result = search_campaign_data_paginate(id_campaign, q, page=page, limit=limit)
     if result is None:
@@ -603,7 +617,10 @@ def search_campaign_data_endpoint(
 
 
 @app.get("/device-information")
-def dev_information():
+def dev_information(
+    current_user: dict = Depends(require_role(["admin", "superadmin"]))
+
+):
     result = device_information()
     if result is None:
         raise HTTPException(status_code=500, detail="Error retrieving device information")
@@ -611,6 +628,7 @@ def dev_information():
 
 @app.get("/device-groups")
 def get_device_groups(
+    current_user: dict = Depends(require_role(["admin", "superadmin"]))
 ):
     result = devicegroup()
     if result is None:
@@ -620,6 +638,7 @@ def get_device_groups(
 @app.delete("/remove-device-from-group/{device_id}")
 def remove_device_from_group(
     device_id: int,
+    current_user: dict = Depends(require_role(["admin", "superadmin"]))
 ):
     result = remove_device(device_id)
     if result is None:
@@ -630,7 +649,8 @@ def remove_device_from_group(
 @app.post("/add-device-to-group")
 def add_device_to_group(
     device_id: int = Form(...),
-    group_id: int = Form(...)
+    group_id: int = Form(...),
+    current_user: dict = Depends(require_role(["admin", "superadmin"]))
 ):
     result = addDeviceToGroup(device_id, group_id)
     if result is None:
@@ -639,7 +659,8 @@ def add_device_to_group(
 
 @app.delete("/delete-user/{user_id}")
 def delete_user(
-    user_id: int
+    user_id: int,
+    current_user: dict = Depends(require_role(["admin", "superadmin"]))
 ):
     result = deleteuser(user_id)
     if result is None:
@@ -652,6 +673,7 @@ def edit_user(
     user_id: int,
     username: str = Form(None),
     password: str = Form(None),
+    current_user: dict = Depends(require_role(["admin", "superadmin"]))
 ):
     result = editUser(user_id,username, password)
     if result is None:
@@ -660,7 +682,9 @@ def edit_user(
 
 
 @app.get("/users")
-def list_users():
+def list_users(
+    current_user: dict = Depends(require_role(["admin", "superadmin"]))
+):
     result = listUser()
     if result is None:
         raise HTTPException(status_code=500, detail="Error get list  user")
@@ -669,6 +693,7 @@ def list_users():
 @app.get('/password/{user_id}')
 def get_password(
     user_id: int,
+    current_user: dict = Depends(require_role(["admin", "superadmin"]))
 ):
     result = getPassword(user_id)
     if result is None:
@@ -680,7 +705,8 @@ def get_password(
 async def create_group(
     group_name: str = Form(...),
     description: str = Form(None),
-    server_url: str = Form(None)
+    server_url: str = Form(None),
+    current_user: dict = Depends(require_role(["admin", "superadmin"]))
 ):
     conn = get_db_connection()
     try:
@@ -708,7 +734,8 @@ async def add_device(
     lat: float = Form(None),
     long: float = Form(None),  
     is_connected: bool = Form(False),
-    is_running: bool = Form(False)
+    is_running: bool = Form(False),
+    current_user: dict = Depends(require_role(["admin", "superadmin"]))
 ):
     conn = get_db_connection()
     try:
@@ -754,6 +781,7 @@ async def add_device(
 
 @app.get("/list-devices")
 def list_device(
+    current_user: dict = Depends(require_role(["admin", "superadmin"]))
 ):
     result = list_devices()
     if result is None:
@@ -761,7 +789,12 @@ def list_device(
     return result
 
 @app.get("/groups")
-def list_groups(page: int = 1, limit: int = 10):
+def list_groups(
+    page: int = 1, 
+    limit: int = 10,
+    current_user: dict = Depends(require_role(["admin", "superadmin"]))
+                
+):
     conn = get_db_connection()
     try:
         with conn.cursor(cursor_factory=psycopg2.extras.RealDictCursor) as cur:
