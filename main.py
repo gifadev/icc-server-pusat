@@ -725,69 +725,6 @@ async def create_group(
     finally:
         conn.close()
 
-
-@app.post("/add-devices", status_code=201)
-async def add_device(
-    serial_number: str = Form(...),
-    ip: str = Form(...),
-    group_id: int = Form(None),  
-    lat: float = Form(None),
-    long: float = Form(None),  
-    is_connected: bool = Form(False),
-    is_running: bool = Form(False),
-    current_user: dict = Depends(require_role(["admin", "superadmin"]))
-):
-    conn = get_db_connection()
-    try:
-        with conn:
-            with conn.cursor(cursor_factory=psycopg2.extras.DictCursor) as cur:
-                query = """
-                INSERT INTO devices (
-                    serial_number, ip, group_id, lat, "long", is_connected, is_running, created_at
-                )
-                VALUES (%s, %s, %s, %s, %s, %s, %s, CURRENT_TIMESTAMP)
-                RETURNING id, serial_number, ip, group_id, lat, "long", is_connected, is_running, created_at;
-                """
-                cur.execute(query, (
-                    serial_number,
-                    ip,
-                    group_id,
-                    lat,
-                    long,
-                    is_connected,
-                    is_running
-                ))
-                new_device = cur.fetchone()
-                response = {
-                    "status": "success",
-                    "msg": "Device created successfully",
-                    "device": {
-                        "id": new_device["id"],
-                        "serial_number": new_device["serial_number"],
-                        "ip": new_device["ip"],
-                        "group_id": new_device["group_id"],
-                        "lat": new_device["lat"],
-                        "long": new_device["long"],
-                        "is_connected": new_device["is_connected"],
-                        "is_running": new_device["is_running"],
-                        "created_at": new_device["created_at"].isoformat() if new_device["created_at"] else None
-                    }
-                }
-                return JSONResponse(status_code=201, content=response)
-    except Exception as e:
-        raise HTTPException(status_code=500, detail=str(e))
-    finally:
-        conn.close()
-
-@app.get("/list-devices")
-def list_device(
-    current_user: dict = Depends(require_role(["admin", "superadmin"]))
-):
-    result = list_devices()
-    if result is None:
-        raise HTTPException(status_code=500, detail="Error retrieving list device")
-    return result
-
 @app.get("/groups")
 def list_groups(
     page: int = 1, 
@@ -822,6 +759,280 @@ def list_groups(
         raise HTTPException(status_code=500, detail=str(e))
     finally:
         conn.close()
+
+@app.put("/edit-group/{group_id}", status_code=200)
+async def edit_group(
+    group_id: int = Path(..., description="ID of the group to update"),
+    group_name: str = Form(...),
+    description: str = Form(None),
+    server_url: str = Form(None),
+    current_user: dict = Depends(require_role(["admin", "superadmin"]))
+):
+    conn = get_db_connection()
+    try:
+        with conn:
+            with conn.cursor(cursor_factory=psycopg2.extras.DictCursor) as cur:
+                # Update dan kembalikan record yang baru
+                query = """
+                UPDATE groups
+                   SET group_name  = %s,
+                       description = %s,
+                       server_url  = %s
+                 WHERE id = %s
+                RETURNING id, group_name, description, server_url, created_at;
+                """
+                cur.execute(query, (group_name, description, server_url, group_id))
+                updated = cur.fetchone()
+                if not updated:
+                    raise HTTPException(status_code=404, detail="Group not found")
+                return updated
+
+    except HTTPException:
+        # lempar ulang 404
+        raise
+    except Exception as e:
+        # error lainnya jadi 500
+        raise HTTPException(status_code=500, detail=str(e))
+    finally:
+        conn.close()
+
+@app.delete("/delete-group/{group_id}", status_code=200)
+async def delete_group(
+    group_id: int = Path(..., description="ID of the group to delete"),
+    current_user: dict = Depends(require_role(["admin", "superadmin"]))
+):
+    conn = get_db_connection()
+    try:
+        with conn:
+            with conn.cursor() as cur:
+                # 1) Pastikan group ada
+                cur.execute("SELECT 1 FROM groups WHERE id = %s", (group_id,))
+                if cur.fetchone() is None:
+                    raise HTTPException(status_code=404, detail="Group not found")
+
+                # 2) Hapus semua relasi di groups_devices
+                cur.execute(
+                    "DELETE FROM groups_devices WHERE group_id = %s",
+                    (group_id,)
+                )
+
+                # 3) Hapus grup-nya
+                cur.execute(
+                    "DELETE FROM groups WHERE id = %s",
+                    (group_id,)
+                )
+
+        return JSONResponse(
+            status_code=200,
+            content={"status": "success", "msg": "Group deleted successfully"}
+        )
+
+    except HTTPException:
+        # Lempar ulang 404
+        raise
+    except Exception as e:
+        # Error lain jadi 500
+        raise HTTPException(status_code=500, detail=str(e))
+    finally:
+        conn.close()
+
+
+@app.post("/add-device", status_code=201)
+async def add_device(
+    serial_number: str   = Form(...),
+    ip: str              = Form(...),
+    group_id: int        = Form(None),
+    lat: float           = Form(None),
+    long: float          = Form(None),
+    is_connected: bool   = Form(False),
+    is_running: bool     = Form(False),
+    current_user: dict   = Depends(require_role(["admin", "superadmin"]))
+):
+    conn = get_db_connection()
+    try:
+        with conn:
+            with conn.cursor(cursor_factory=psycopg2.extras.DictCursor) as cur:
+                # 1) Masukkan ke tabel devices
+                cur.execute("""
+                    INSERT INTO devices
+                        (serial_number, ip, lat, "long", is_connected, is_running, created_at)
+                    VALUES
+                        (%s, %s, %s, %s, %s, %s, CURRENT_TIMESTAMP)
+                    RETURNING id, serial_number, ip, lat, "long", is_connected, is_running, created_at;
+                """, (
+                    serial_number,
+                    ip,
+                    lat,
+                    long,
+                    is_connected,
+                    is_running
+                ))
+                device = cur.fetchone()
+                device_id = device["id"]
+
+                # 2) Masukkan mapping ke groups_devices jika ada group_id
+                if group_id is not None:
+                    cur.execute("""
+                        INSERT INTO groups_devices (group_id, device_id)
+                        VALUES (%s, %s)
+                    """, (group_id, device_id))
+
+        # 3) Kembalikan response
+        return JSONResponse(
+            status_code=201,
+            content={
+                "status": "success",
+                "msg": "Device created successfully",
+                "device": {
+                    "id":               device["id"],
+                    "serial_number":    device["serial_number"],
+                    "ip":               device["ip"],
+                    "group_id":         group_id,
+                    "lat":              device["lat"],
+                    "long":             device["long"],
+                    "is_connected":     device["is_connected"],
+                    "is_running":       device["is_running"],
+                    "created_at":       device["created_at"].isoformat()
+                }
+            }
+        )
+
+    except Exception as e:
+        raise HTTPException(status_code=500, detail=str(e))
+
+    finally:
+        conn.close()
+
+
+@app.get("/list-devices")
+def list_device(
+    current_user: dict = Depends(require_role(["admin", "superadmin"]))
+):
+    result = list_devices()
+    if result is None:
+        raise HTTPException(status_code=500, detail="Error retrieving list device")
+    return result
+
+@app.put("/edit-device/{device_id}", status_code=200)
+async def edit_device(
+    device_id: int       = Path(..., description="ID of the device to update"),
+    serial_number: str   = Form(...),
+    ip: str              = Form(...),
+    group_id: int        = Form(None),
+    lat: float           = Form(None),
+    long: float          = Form(None),
+    is_connected: bool   = Form(False),
+    is_running: bool     = Form(False),
+    current_user: dict   = Depends(require_role(["admin", "superadmin"]))
+):
+    conn = get_db_connection()
+    try:
+        with conn:
+            with conn.cursor(cursor_factory=psycopg2.extras.DictCursor) as cur:
+                # 1) Pastikan device ada
+                cur.execute("SELECT 1 FROM devices WHERE id = %s", (device_id,))
+                if cur.fetchone() is None:
+                    raise HTTPException(status_code=404, detail="Device not found")
+
+                # 2) Update tabel devices
+                cur.execute("""
+                    UPDATE devices
+                       SET serial_number = %s,
+                           ip            = %s,
+                           lat           = %s,
+                           "long"        = %s,
+                           is_connected  = %s,
+                           is_running    = %s
+                     WHERE id = %s
+                     RETURNING id, serial_number, ip, lat, "long", is_connected, is_running, created_at;
+                """, (
+                    serial_number,
+                    ip,
+                    lat,
+                    long,
+                    is_connected,
+                    is_running,
+                    device_id
+                ))
+                updated = cur.fetchone()
+
+                # 3) Perbarui mapping di groups_devices
+                cur.execute("DELETE FROM groups_devices WHERE device_id = %s", (device_id,))
+                if group_id is not None:
+                    cur.execute("""
+                        INSERT INTO groups_devices (group_id, device_id)
+                        VALUES (%s, %s)
+                    """, (group_id, device_id))
+
+        # 4) Kembalikan response
+        return JSONResponse(
+            status_code=200,
+            content={
+                "status": "success",
+                "msg": "Device updated successfully",
+                "device": {
+                    "id":               updated["id"],
+                    "serial_number":    updated["serial_number"],
+                    "ip":               updated["ip"],
+                    "group_id":         group_id,
+                    "lat":              updated["lat"],
+                    "long":             updated["long"],
+                    "is_connected":     updated["is_connected"],
+                    "is_running":       updated["is_running"],
+                    "created_at":       updated["created_at"].isoformat()
+                }
+            }
+        )
+
+    except HTTPException:
+        raise
+    except Exception as e:
+        raise HTTPException(status_code=500, detail=str(e))
+
+    finally:
+        conn.close()
+
+@app.delete("/delete-device/{device_id}", status_code=200)
+async def delete_device(
+    device_id: int = Path(..., description="ID of the device to delete"),
+    current_user: dict = Depends(require_role(["admin", "superadmin"]))
+):
+    conn = get_db_connection()
+    try:
+        with conn:
+            with conn.cursor() as cur:
+                # 1) Pastikan device ada
+                cur.execute("SELECT 1 FROM devices WHERE id = %s", (device_id,))
+                if cur.fetchone() is None:
+                    raise HTTPException(status_code=404, detail="Device not found")
+
+                # 2) Hapus mapping di groups_devices
+                cur.execute(
+                    "DELETE FROM groups_devices WHERE device_id = %s",
+                    (device_id,)
+                )
+
+                # 3) Hapus device
+                cur.execute(
+                    "DELETE FROM devices WHERE id = %s",
+                    (device_id,)
+                )
+
+        return JSONResponse(
+            status_code=200,
+            content={"status": "success", "msg": "Device deleted successfully"}
+        )
+
+    except HTTPException:
+        # lempar ulang 404
+        raise
+    except Exception as e:
+        # error lain jadi 500
+        raise HTTPException(status_code=500, detail=str(e))
+    finally:
+        conn.close()
+
+
 
 @app.post("/update-status-alert/{data_type}", status_code=200)
 def update_status_alert(
