@@ -334,8 +334,7 @@ async def start_campaign(
 @app.websocket("/ws/{campaign_id}")
 async def websocket_endpoint(
     websocket: WebSocket, 
-    campaign_id: int,
-    current_user: dict = Depends(require_role(["admin", "superadmin"]))
+    campaign_id: int
     ):
     await manager.connect(campaign_id, websocket)
     print(f"Klien WebSocket terhubung untuk campaign {campaign_id}")
